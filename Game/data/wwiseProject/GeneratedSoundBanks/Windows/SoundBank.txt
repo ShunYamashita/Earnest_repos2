@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1983284048	ak_test			\Default Work Unit\ak_test	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	270140794	title	C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\.cache\Windows\SFX\title_F17FB28C.wem	270140794.wem	\Actor-Mixer Hierarchy\Default Work Unit\title	
+

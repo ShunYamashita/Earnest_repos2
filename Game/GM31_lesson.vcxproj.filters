@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="HLSL">
+      <UniqueIdentifier>{f5f679e3-8130-43fb-b3c9-9ba076d0d86b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\3D">
+      <UniqueIdentifier>{2961ddb8-8a86-4f61-9c99-2b59305f9daf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\utility">
+      <UniqueIdentifier>{a9ad3643-d880-4a32-8355-c962a72a086a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\input">
+      <UniqueIdentifier>{db9a71fe-1d9a-4686-96a3-16823746c6ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mesh">
+      <UniqueIdentifier>{4166e291-538c-4602-822f-aee716ee6785}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode">
+      <UniqueIdentifier>{153bf966-fff4-4b48-baec-90969d27b6b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\effect">
+      <UniqueIdentifier>{06e3da24-16da-45aa-ac67-a5b90c46fbc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\colision">
+      <UniqueIdentifier>{9c965d3f-4e35-4f72-bd3b-220ee2161905}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\effekseer">
+      <UniqueIdentifier>{1a6d0d75-5b75-48c8-9697-af9a88de8f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\renderer">
+      <UniqueIdentifier>{dfd288d4-7668-4cb4-861e-b757e2d333b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\imgui">
+      <UniqueIdentifier>{b902cc3d-4da4-4bf9-a4d3-f8c9ce2e2398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI">
+      <UniqueIdentifier>{e08f8d0c-702c-4493-938a-10c74fdce786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI">
+      <UniqueIdentifier>{aaa50c81-8323-4a2c-af82-a0f55c0f1495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\behaviorTree">
+      <UniqueIdentifier>{7e5fc652-f49e-45da-92ee-a1db024142eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\stateMachine">
+      <UniqueIdentifier>{af8eef94-2790-4a9c-9fae-793719f824ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\metaAI">
+      <UniqueIdentifier>{e1993697-68dd-4d48-9fde-2664e18f327a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Wwise">
+      <UniqueIdentifier>{bc654309-cc1b-4ba6-8837-3cf0ca0ea4a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Wwise\common">
+      <UniqueIdentifier>{e2addcbc-f160-414d-b4ee-9b7d6181fcc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Wwise\win32">
+      <UniqueIdentifier>{194bef47-b1a3-4319-a26a-d17efd831e26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\shadow">
+      <UniqueIdentifier>{fe2b9610-d8fa-4c4e-bc87-2630c17c51da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\FBX">
+      <UniqueIdentifier>{e548a7e4-83a0-424c-80e5-e87ab6f08bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\shader">
+      <UniqueIdentifier>{40d04f72-2f07-4efa-9449-834b4ca823b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\shader\2D">
+      <UniqueIdentifier>{510d2846-a6cf-496a-91d3-f01055d75309}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\shader\3D">
+      <UniqueIdentifier>{745dba63-d8eb-4099-839e-e1cd888ebf1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HLSL\2D">
+      <UniqueIdentifier>{615f919a-7faf-4164-b766-50d74edb8dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\renderer\scene">
+      <UniqueIdentifier>{a4876cec-a9b5-4389-b19d-d4d00cd80a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\renderer\scene\2D">
+      <UniqueIdentifier>{bae3318e-0439-4a75-8914-5287ae67df34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\renderer\scene\3D">
+      <UniqueIdentifier>{6070598b-6b49-4e8f-9bf6-dfadd31a8f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\stageSelect">
+      <UniqueIdentifier>{f5b75d69-6cb1-40ce-a01b-d0eddf7791c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\stageSelect\object">
+      <UniqueIdentifier>{150baf80-223a-4648-a7e0-395bed553239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\stageSelect\UI">
+      <UniqueIdentifier>{e7291ebc-66d0-411d-acbf-7f07974f682f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game">
+      <UniqueIdentifier>{aa14b495-2a63-42c4-b29c-3dedd56a2c09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object">
+      <UniqueIdentifier>{345efc57-1fd6-4551-89e1-997c5b6245d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\magic">
+      <UniqueIdentifier>{f194f279-2cd5-46d3-aec0-334fb36e9bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\UI">
+      <UniqueIdentifier>{907a8fa6-18e5-4044-83b4-ddaf4591832a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\tutorial">
+      <UniqueIdentifier>{a59ae291-8671-416a-8cc7-31b3735ef7fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\result">
+      <UniqueIdentifier>{c3922ce5-50a5-4763-ab7b-851996b1c028}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\result\object">
+      <UniqueIdentifier>{160c8509-34eb-4a30-a090-756d6a54cea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\result\UI">
+      <UniqueIdentifier>{139225cc-0b39-498d-b165-8439f6c99d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\teamLogo">
+      <UniqueIdentifier>{d966edea-6878-4a2b-8195-5acafa397fce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\test">
+      <UniqueIdentifier>{e00e22fe-6336-4afa-800d-94d814cfc589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\title">
+      <UniqueIdentifier>{c4eefd89-7ed7-4daa-b292-b97beeaae64f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\tool">
+      <UniqueIdentifier>{bcd6cd47-9353-40c5-8a6c-d5314c3c5118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\camera">
+      <UniqueIdentifier>{ddbe7dec-5142-4deb-af61-4f86f42f6321}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\vector">
+      <UniqueIdentifier>{09fcce1b-0596-462e-9d17-3248adc8d05e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\sound">
+      <UniqueIdentifier>{47a38ee4-8d4a-4107-8061-0a275866d3fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\light">
+      <UniqueIdentifier>{bbb9ae00-31b5-4206-8d54-9ca82823a2a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\texture">
+      <UniqueIdentifier>{d9ceca05-0b27-4e42-96e3-3eb267191586}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\fade">
+      <UniqueIdentifier>{92113745-0f35-436f-aea8-757da1ebe2fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\utility\math">
+      <UniqueIdentifier>{c3f017ce-103e-4019-96c6-7dfe1842e142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\FBX\unity">
+      <UniqueIdentifier>{653f4fd8-bccd-475f-bcfe-dc26aa33b27e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\FBX\object">
+      <UniqueIdentifier>{cc43bc69-73ef-4674-bab5-ca03f4626337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\player">
+      <UniqueIdentifier>{12485467-b578-4972-bad8-24d0773075fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\player\state">
+      <UniqueIdentifier>{065b2ce2-07c3-488d-a57f-e90af52e7f16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\enemy">
+      <UniqueIdentifier>{d2cfc387-577a-4780-8903-43171ba56613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\enemy\state">
+      <UniqueIdentifier>{03434445-73f0-4da7-abb9-2ed1286ebc01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\debug">
+      <UniqueIdentifier>{318a1eda-4ac3-4174-a108-e9520b95104b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\title\UI">
+      <UniqueIdentifier>{4e509bda-631d-4350-b9d7-552b8a8c5933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\boneInfoTexture">
+      <UniqueIdentifier>{fc6c784b-b27b-43dc-93a4-9a56af1bfe02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\navigationAI">
+      <UniqueIdentifier>{dec24a8c-bf98-4732-862f-d85b0d367e85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\abstract">
+      <UniqueIdentifier>{8590bd7b-8142-44b2-89a3-e159fa048a56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="manager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Common\AkFilePackage.cpp">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Common\AkFilePackageLUT.cpp">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Common\AkDefaultLowLevelIODispatcher.cpp">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Common\AkFileLocationBase.cpp">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClCompile>
+    <ClCompile Include="AIManager.cpp">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="colision.cpp">
+      <Filter>ソース ファイル\colision</Filter>
+    </ClCompile>
+    <ClCompile Include="emitter.cpp">
+      <Filter>ソース ファイル\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="particle.cpp">
+      <Filter>ソース ファイル\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="effekseerManager.cpp">
+      <Filter>ソース ファイル\effekseer</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui.cpp">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_demo.cpp">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_draw.cpp">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_dx9.cpp">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>ソース ファイル\input</Filter>
+    </ClCompile>
+    <ClCompile Include="joystick.cpp">
+      <Filter>ソース ファイル\input</Filter>
+    </ClCompile>
+    <ClCompile Include="keyboard.cpp">
+      <Filter>ソース ファイル\input</Filter>
+    </ClCompile>
+    <ClCompile Include="xboxController.cpp">
+      <Filter>ソース ファイル\input</Filter>
+    </ClCompile>
+    <ClCompile Include="meshCube.cpp">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="meshDome.cpp">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="meshField.cpp">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="meshSphere.cpp">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="meshWall.cpp">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>ソース ファイル\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>ソース ファイル\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="shaderManager.cpp">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3D.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DNoTexture.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="stencilShadow.cpp">
+      <Filter>ソース ファイル\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
+      <Filter>ソース ファイル\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Win32\AkDefaultIOHookBlocking.cpp">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Win32\AkDefaultIOHookDeferred.cpp">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise\Wwise_Win32\stdafx.cpp">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="Wwise.cpp">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DNoLight.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="magicFire.cpp">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClCompile>
+    <ClCompile Include="magicLightning.cpp">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClCompile>
+    <ClCompile Include="magicTornade.cpp">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClCompile>
+    <ClCompile Include="crystalMagic.cpp">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClCompile>
+    <ClCompile Include="brave.cpp">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="life.cpp">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="number.cpp">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="playerUI.cpp">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>ソース ファイル\renderer\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene2D.cpp">
+      <Filter>ソース ファイル\renderer\scene\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="scene2DL.cpp">
+      <Filter>ソース ファイル\renderer\scene\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="scene3D.cpp">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneFBX.cpp">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneModel.cpp">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneModelAnim.cpp">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneModelParts.cpp">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="stageSelect.cpp">
+      <Filter>ソース ファイル\mode\stageSelect</Filter>
+    </ClCompile>
+    <ClCompile Include="playerSelect.cpp">
+      <Filter>ソース ファイル\mode\stageSelect\object</Filter>
+    </ClCompile>
+    <ClCompile Include="stageSelect2D.cpp">
+      <Filter>ソース ファイル\mode\stageSelect\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="selectVSMode.cpp">
+      <Filter>ソース ファイル\mode\stageSelect\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>ソース ファイル\mode\game</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="field.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="hitField.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="shadow.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="stateAnimator.cpp">
+      <Filter>ソース ファイル\mode\game</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorial.cpp">
+      <Filter>ソース ファイル\mode\tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="result.cpp">
+      <Filter>ソース ファイル\mode\result</Filter>
+    </ClCompile>
+    <ClCompile Include="playerResult.cpp">
+      <Filter>ソース ファイル\mode\result\object</Filter>
+    </ClCompile>
+    <ClCompile Include="readySelect.cpp">
+      <Filter>ソース ファイル\mode\result\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="teamLogo.cpp">
+      <Filter>ソース ファイル\mode\teamLogo</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>ソース ファイル\mode\test</Filter>
+    </ClCompile>
+    <ClCompile Include="title.cpp">
+      <Filter>ソース ファイル\mode\title</Filter>
+    </ClCompile>
+    <ClCompile Include="tool.cpp">
+      <Filter>ソース ファイル\mode\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>ソース ファイル\utility\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="vector2D.cpp">
+      <Filter>ソース ファイル\utility\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="vector3D.cpp">
+      <Filter>ソース ファイル\utility\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="vector4D.cpp">
+      <Filter>ソース ファイル\utility\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="sound.cpp">
+      <Filter>ソース ファイル\utility\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="xact.cpp">
+      <Filter>ソース ファイル\utility\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>ソース ファイル\utility\light</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>ソース ファイル\utility\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="fade.cpp">
+      <Filter>ソース ファイル\utility\fade</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneBG.cpp">
+      <Filter>ソース ファイル\renderer\scene\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="unityFBX.cpp">
+      <Filter>ソース ファイル\FBX\unity</Filter>
+    </ClCompile>
+    <ClCompile Include="objectFBX.cpp">
+      <Filter>ソース ファイル\FBX\object</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\mode\game\object\player</Filter>
+    </ClCompile>
+    <ClCompile Include="playerMove.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerNeutral.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerJump.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerLanding.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerEscape.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerMagicReady.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerMagicActive.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerBend.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerLockonDash.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerGuard.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerBlow.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerPassive.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerResultLose.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerResultWin.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRushAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerState.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerBraveAttack000After.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerBraveAttack000Before.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerHPAttack000.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DRimLightTexture.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="depthShadow.cpp">
+      <Filter>ソース ファイル\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DDepthShadow.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DShadowMap.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="block.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="debugManager.cpp">
+      <Filter>ソース ファイル\debug</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DThun.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="rootNodeAI.cpp">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DOutline.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="titlePress.cpp">
+      <Filter>ソース ファイル\mode\title\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="boneTexture.cpp">
+      <Filter>ソース ファイル\boneInfoTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="navigationAI.cpp">
+      <Filter>ソース ファイル\AI\navigationAI</Filter>
+    </ClCompile>
+    <ClCompile Include="characterAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI</Filter>
+    </ClCompile>
+    <ClCompile Include="metaAI.cpp">
+      <Filter>ソース ファイル\AI\metaAI</Filter>
+    </ClCompile>
+    <ClCompile Include="layerAI.cpp">
+      <Filter>ソース ファイル\AI\abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClCompile>
+    <ClCompile Include="playerFreeDash.cpp">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DPlayer.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="cascadeShadow.cpp">
+      <Filter>ソース ファイル\shadow</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="manager.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="AIManager.h">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="shape.h">
+      <Filter>ソース ファイル\colision</Filter>
+    </ClInclude>
+    <ClInclude Include="colision.h">
+      <Filter>ソース ファイル\colision</Filter>
+    </ClInclude>
+    <ClInclude Include="emitter.h">
+      <Filter>ソース ファイル\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="particle.h">
+      <Filter>ソース ファイル\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="effekseerManager.h">
+      <Filter>ソース ファイル\effekseer</Filter>
+    </ClInclude>
+    <ClInclude Include="imconfig.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_dx9.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_internal.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_rect_pack.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_textedit.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_truetype.h">
+      <Filter>ソース ファイル\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>ソース ファイル\input</Filter>
+    </ClInclude>
+    <ClInclude Include="joystick.h">
+      <Filter>ソース ファイル\input</Filter>
+    </ClInclude>
+    <ClInclude Include="keyboard.h">
+      <Filter>ソース ファイル\input</Filter>
+    </ClInclude>
+    <ClInclude Include="xboxController.h">
+      <Filter>ソース ファイル\input</Filter>
+    </ClInclude>
+    <ClInclude Include="meshCube.h">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="meshDome.h">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="meshField.h">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="meshSphere.h">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="meshWall.h">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="mode.h">
+      <Filter>ソース ファイル\mode</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>ソース ファイル\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>ソース ファイル\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3D.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DNoTexture.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="stencilShadow.h">
+      <Filter>ソース ファイル\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>ソース ファイル\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Common\AkDefaultLowLevelIODispatcher.h">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Common\AkFileLocationBase.h">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Common\AkFilePackage.h">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Common\AkFilePackageLowLevelIO.h">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Common\AkFilePackageLUT.h">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Common\AkMultipleFileLocation.h">
+      <Filter>ソース ファイル\Wwise\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Win32\AkDefaultIOHookBlocking.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Win32\AkDefaultIOHookDeferred.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Win32\AkFileHelpers.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Win32\AkFilePackageLowLevelIOBlocking.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Win32\AkFilePackageLowLevelIODeferred.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise\Wwise_Win32\stdafx.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DNoLight.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="magicFire.h">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClInclude>
+    <ClInclude Include="magicLightning.h">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClInclude>
+    <ClInclude Include="magicTornade.h">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClInclude>
+    <ClInclude Include="crystalMagic.h">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClInclude>
+    <ClInclude Include="magic.h">
+      <Filter>ソース ファイル\mode\game\magic</Filter>
+    </ClInclude>
+    <ClInclude Include="playerUI.h">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="brave.h">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="life.h">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="number.h">
+      <Filter>ソース ファイル\mode\game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>ソース ファイル\renderer\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene2D.h">
+      <Filter>ソース ファイル\renderer\scene\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="scene2DL.h">
+      <Filter>ソース ファイル\renderer\scene\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="scene3D.h">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneFBX.h">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneModel.h">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneModelAnim.h">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneModelParts.h">
+      <Filter>ソース ファイル\renderer\scene\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="stageSelect.h">
+      <Filter>ソース ファイル\mode\stageSelect</Filter>
+    </ClInclude>
+    <ClInclude Include="playerSelect.h">
+      <Filter>ソース ファイル\mode\stageSelect\object</Filter>
+    </ClInclude>
+    <ClInclude Include="stageSelect2D.h">
+      <Filter>ソース ファイル\mode\stageSelect\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="selectVSMode.h">
+      <Filter>ソース ファイル\mode\stageSelect\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>ソース ファイル\mode\game</Filter>
+    </ClInclude>
+    <ClInclude Include="shadow.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="field.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="hitField.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="stateAnimator.h">
+      <Filter>ソース ファイル\mode\game</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>ソース ファイル\mode\tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="result.h">
+      <Filter>ソース ファイル\mode\result</Filter>
+    </ClInclude>
+    <ClInclude Include="playerResult.h">
+      <Filter>ソース ファイル\mode\result\object</Filter>
+    </ClInclude>
+    <ClInclude Include="readySelect.h">
+      <Filter>ソース ファイル\mode\result\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="teamLogo.h">
+      <Filter>ソース ファイル\mode\teamLogo</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>ソース ファイル\mode\test</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>ソース ファイル\mode\title</Filter>
+    </ClInclude>
+    <ClInclude Include="tool.h">
+      <Filter>ソース ファイル\mode\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>ソース ファイル\utility\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2D.h">
+      <Filter>ソース ファイル\utility\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="vector3D.h">
+      <Filter>ソース ファイル\utility\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="vector4D.h">
+      <Filter>ソース ファイル\utility\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="sound.h">
+      <Filter>ソース ファイル\utility\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="xact.h">
+      <Filter>ソース ファイル\utility\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>ソース ファイル\utility\light</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>ソース ファイル\utility\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="fade.h">
+      <Filter>ソース ファイル\utility\fade</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OpenGL_FBX\math.h">
+      <Filter>ソース ファイル\utility\math</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneBG.h">
+      <Filter>ソース ファイル\renderer\scene\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="unityFBX.h">
+      <Filter>ソース ファイル\FBX\unity</Filter>
+    </ClInclude>
+    <ClInclude Include="objectFBX.h">
+      <Filter>ソース ファイル\FBX\object</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>ソース ファイル\mode\game\object\player</Filter>
+    </ClInclude>
+    <ClInclude Include="playerState.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerMove.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerNeutral.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerJump.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerLanding.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerEscape.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerMagicReady.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerMagicActive.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerBend.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerLockonDash.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerGuard.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerBlow.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerPassive.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerResultWin.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerResultLose.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRushAttack.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="shaderManager.h">
+      <Filter>ソース ファイル\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="playerBraveAttack000After.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerBraveAttack000Before.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerHPAttack000.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DRimLightTexture.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="depthShadow.h">
+      <Filter>ソース ファイル\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DDepthShadow.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DShadowMap.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>ソース ファイル\mode\game\object\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="debugManager.h">
+      <Filter>ソース ファイル\debug</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DThun.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="rootNodeAI.h">
+      <Filter>ソース ファイル\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DOutline.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="titlePress.h">
+      <Filter>ソース ファイル\mode\title\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="boneTexture.h">
+      <Filter>ソース ファイル\boneInfoTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="stateMachinAI.h">
+      <Filter>ソース ファイル\AI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="navigationAI.h">
+      <Filter>ソース ファイル\AI\navigationAI</Filter>
+    </ClInclude>
+    <ClInclude Include="characterAI.h">
+      <Filter>ソース ファイル\AI\characterAI</Filter>
+    </ClInclude>
+    <ClInclude Include="metaAI.h">
+      <Filter>ソース ファイル\AI\metaAI</Filter>
+    </ClInclude>
+    <ClInclude Include="nodeAI.h">
+      <Filter>ソース ファイル\AI\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="layerAI.h">
+      <Filter>ソース ファイル\AI\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="wall.h">
+      <Filter>ソース ファイル\mode\game\object</Filter>
+    </ClInclude>
+    <ClInclude Include="playerFreeDash.h">
+      <Filter>ソース ファイル\mode\game\object\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DPlayer.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="cascadeShadow.h">
+      <Filter>ソース ファイル\shadow</Filter>
+    </ClInclude>
+    <ClInclude Include="Wwise_IDs.h">
+      <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\HLSL\3D\basicPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\basicVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\depthShadowPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\depthShadowVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\noLightVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\noTexturePS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\noTextureVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\outlinePS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\outlineVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\rimLightTexturePS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\rimLightTextureVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\shadowMapPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\shadowMapVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\skinAnimationPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\skinAnimationVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\thunPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\thunVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\playerPS.hlsl" />
+    <None Include="data\HLSL\3D\playerVS.hlsl" />
+  </ItemGroup>
+</Project>

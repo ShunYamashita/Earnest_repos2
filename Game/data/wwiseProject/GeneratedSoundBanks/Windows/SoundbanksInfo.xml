@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
+	<RootPaths>
+		<ProjectRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles>
+		<File Id="270140794" Language="SFX">
+			<ShortName>title.wav</ShortName>
+			<Path>SFX\title_F17FB28C.wem</Path>
+		</File>
+	</StreamedFiles>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1661994096" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\SoundBank</ObjectPath>
+			<ShortName>SoundBank</ShortName>
+			<Path>SoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1983284048" Name="ak_test" ObjectPath="\Events\Default Work Unit\ak_test"/>
+			</IncludedEvents>
+			<ReferencedStreamedFiles>
+				<File Id="270140794"/>
+			</ReferencedStreamedFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

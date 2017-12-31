@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{31233A56-186E-43BE-8E6B-7D0119973B94}" SchemaVersion="80">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{31233A56-186E-43BE-8E6B-7D0119973B94}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="title" ID="{A50678FE-8F7C-416B-A021-6976869CF465}" ShortID="372773223">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="IsStreamingEnabled" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{053FD41E-615E-4C0C-8E51-B9C4C1E9A889}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{15D7BBC1-31C2-483C-894F-AC275860D1BF}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="title" ID="{EF671EBB-7A1F-4F08-8E0F-0D4A9834171B}" ShortID="270140794">
+							<Language>SFX</Language>
+							<AudioFile>title.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="title" ID="{EF671EBB-7A1F-4F08-8E0F-0D4A9834171B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
