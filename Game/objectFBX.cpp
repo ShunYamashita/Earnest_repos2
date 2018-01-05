@@ -70,7 +70,7 @@ HRESULT ObjectFBX::Init( void )
 	FbxImporter* lImporter = FbxImporter::Create( lSdkManager ,"" ); 
  
 	// Use the first argument as the filename for the importer. 
-	if( !lImporter->Initialize( "data/FBX/rauder/rauder_attack.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
+	if( !lImporter->Initialize( "data/FBX/rauder/rauder_test.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
 	{      
 		char buf[ 256 ];     
 		sprintf( buf , "Call to FbxImporter::Initialize() failed.\nError returned: %s\n\n" , lImporter->GetStatus( ).GetErrorString( ) );     
@@ -108,12 +108,6 @@ HRESULT ObjectFBX::Init( void )
 	//  アニメーションの開始・終了時間の取得
 	m_startTime = pTakeInfo->mLocalTimeSpan.GetStart( );
 	m_endTime = pTakeInfo->mLocalTimeSpan.GetStop( );
-
-	D3DXVECTOR3 translation;
-	translation.x = static_cast<float>(lScene->GetRootNode( )->LclTranslation.Get()[0]);         
-	translation.y = static_cast<float>(lScene->GetRootNode( )->LclTranslation.Get()[1]);         
-	translation.z = static_cast<float>(lScene->GetRootNode( )->LclTranslation.Get()[2]);  
-	int cnt = lScene->GetGeometryCount();
 
 	//  メッシュ数の取得
 	int numberMesh = lScene->GetMemberCount< FbxMesh >( );
@@ -350,7 +344,7 @@ HRESULT ObjectFBX::Init( void )
 	lImporter = FbxImporter::Create( lSdkManager ,"" ); 
 
 	// Use the first argument as the filename for the importer. 
-	if( !lImporter->Initialize( "data/FBX/rauder/Animations/attack_test.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
+	if( !lImporter->Initialize( "data/FBX/winks/Animations/idle_test.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
 	{      
 		char buf[ 256 ];     
 		sprintf( buf , "Call to FbxImporter::Initialize() failed.\nError returned: %s\n\n" , lImporter->GetStatus( ).GetErrorString( ) );     
@@ -571,7 +565,7 @@ void ObjectFBX::recursiveDraw( void )
 			D3DXVECTOR3 pos = m_meshes[ countMesh ].points[ countPoint ].positions;
 
 			D3DXVec3TransformCoord( &pos , &pos , &mtx );                
-			positions.push_back( pos );             
+			positions.push_back( m_meshes[ countMesh ].points[ countPoint ].positions );             
 		} 
 
 		VERTEX_3D* pVtx = NULL;				//  頂点バッファのポインタ
@@ -699,7 +693,7 @@ void ObjectFBX::recursiveDraw( void )
 			D3DXVECTOR3 pos = m_meshes[ countMesh ].points[ countPoint ].positions;
 
 			D3DXVec3TransformCoord( &pos , &pos , &mtx );                
-			positions.push_back( pos );             
+			positions.push_back( m_meshes[ countMesh ].points[ countPoint ].positions );             
 		} 
 
 		VERTEX_3D* pVtx = NULL;				//  頂点バッファのポインタ
@@ -714,6 +708,7 @@ void ObjectFBX::recursiveDraw( void )
 			//  反転用のループカウント
 			int countLoop = 0;
 
+			//for( int i = 0; i < m_meshes[ countMesh ].positionIndices.size( ); i++ ) 
 			for( int i = m_meshes[ countMesh ].positionIndices.size( ) - 1; i >= 0; i-- ) 
 			{             
 				//  頂点座標の設定( 3D座標 ・ 右回り )

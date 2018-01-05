@@ -34,6 +34,7 @@
 #include "shaderManager.h"
 #include "player.h"
 #include "depthShadow.h"
+#include "cascadeShadow.h"
 #include "debugManager.h"
 
 //--------------------------------------------------------------------------------------
@@ -134,6 +135,9 @@ HRESULT SceneManager::Init( HINSTANCE hInstance , HWND hWnd, bool bWindow )
 
 	//  デプスシャドウの初期化
 	DepthShadow::Init( );
+
+	//  カスケードシャドウの初期化
+	CascadeShadow::Init( );
 
 	//  キーボードクラスポインタが空の場合
 	if( m_pKeyboard == NULL )
@@ -330,6 +334,9 @@ void SceneManager::Uninit( void )
 {
 	//  デバッグ管理クラスの終了
 	DebugManager::Uninit( );
+
+	//  カスケードシャドウの初期化
+	CascadeShadow::Uninit( );
 
 	//  デプスシャドウの終了
 	DepthShadow::Uninit( );

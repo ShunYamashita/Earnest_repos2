@@ -467,7 +467,7 @@ const D3DXMATRIX& Camera::GetProjectionMatrix( void )
 //--------------------------------------------------------------------------------------
 //  視点座標を取得する関数
 //--------------------------------------------------------------------------------------
-D3DXVECTOR3 Camera::GetCameraPosEye( void )
+const D3DXVECTOR3& Camera::GetCameraPosEye( void )
 {
 	return m_posEye;
 }
@@ -475,15 +475,23 @@ D3DXVECTOR3 Camera::GetCameraPosEye( void )
 //--------------------------------------------------------------------------------------
 //  注視点座標を取得する関数
 //--------------------------------------------------------------------------------------
-D3DXVECTOR3 Camera::GetCameraPosAt( void )
+const D3DXVECTOR3& Camera::GetCameraPosAt( void )
 {
 	return m_posAt;
 }
 
 //--------------------------------------------------------------------------------------
+//  上向き方向ベクトルの取得
+//--------------------------------------------------------------------------------------
+const D3DXVECTOR3& Camera::GetCameraVectorUp( void )
+{
+	return m_vecUp;
+}
+
+//--------------------------------------------------------------------------------------
 //  視点座標を取得する関数
 //--------------------------------------------------------------------------------------
-D3DXVECTOR3 Camera::GetCameraBasePosEye( void )
+const D3DXVECTOR3& Camera::GetCameraBasePosEye( void )
 {
 	return m_basePosEye;
 }
@@ -491,7 +499,7 @@ D3DXVECTOR3 Camera::GetCameraBasePosEye( void )
 //--------------------------------------------------------------------------------------
 //  注視点座標を取得する関数
 //--------------------------------------------------------------------------------------
-D3DXVECTOR3 Camera::GetCameraBasePosAt( void )
+const D3DXVECTOR3& Camera::GetCameraBasePosAt( void )
 {
 	return m_basePosAt;
 }
@@ -499,15 +507,23 @@ D3DXVECTOR3 Camera::GetCameraBasePosAt( void )
 //--------------------------------------------------------------------------------------
 //  方向ベクトルを取得する関数
 //--------------------------------------------------------------------------------------
-D3DXVECTOR3 Camera::GetCameraVecDirect( void )
+const D3DXVECTOR3& Camera::GetCameraVecDirect( void )
 {
 	return m_vecDirect;
 }
 
 //--------------------------------------------------------------------------------------
+//  画角の取得
+//--------------------------------------------------------------------------------------
+const float& Camera::GetCameraFov( void )
+{
+	return m_fFovY;
+}
+
+//--------------------------------------------------------------------------------------
 //  カメラと対峙する回転行列を取得する関数
 //--------------------------------------------------------------------------------------
-D3DXMATRIX Camera::GetInvRotateMat( D3DXVECTOR3 position )
+const D3DXMATRIX& Camera::GetInvRotateMat( D3DXVECTOR3 position )
 {
 	D3DXMATRIX mtxInv;								//  回転行列格納用
 

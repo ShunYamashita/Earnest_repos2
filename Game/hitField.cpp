@@ -10,6 +10,7 @@
 #include "hitField.h"
 #include "utility.h"
 #include "game.h"
+#include "meshBoundingBox.h"
 #include <iostream>
 
 //--------------------------------------------------------------------------------------
@@ -129,6 +130,12 @@ HRESULT HitField::Init( void )
 
 	//  最大座標の設定
 	Game::SetFieldMax( max );
+
+#ifdef _DEBUG
+
+	MeshBoundingBox
+
+#endif
 
 	//////////////////////////////////////////////////////////
 	//  頂点インデックスの取得

@@ -30,6 +30,7 @@
 #include "unityFBX.h"
 #include "block.h"
 #include "wall.h"
+#include "cascadeShadow.h"
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
@@ -132,6 +133,9 @@ void Game::Update( void )
 			camera->Update( );
 		}
 	}
+
+	//  カスケードシャドウの更新
+	CascadeShadow::Update( );
 
 	if( m_bClear )
 	{

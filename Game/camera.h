@@ -47,13 +47,15 @@ public:
 
 	const D3DXMATRIX&	GetViewMatrix( void );							//  ビュー行列の取得
 	const D3DXMATRIX&	GetProjectionMatrix( void );					//  プロジェクション行列の取得
-	D3DXVECTOR3			GetCameraPosEye( void );						//  視点座標の取得
-	D3DXVECTOR3			GetCameraPosAt( void );							//  注視点座標の取得
-	D3DXVECTOR3			GetCameraVecDirect( void );						//  方向ベクトルの取得
-	D3DXVECTOR3			GetCameraBasePosEye( void );					//  目標視点座標の取得
-	D3DXVECTOR3			GetCameraBasePosAt( void );						//  目標注視点座標の取得
+	const D3DXVECTOR3&	GetCameraPosEye( void );						//  視点座標の取得
+	const D3DXVECTOR3&	GetCameraPosAt( void );							//  注視点座標の取得
+	const D3DXVECTOR3&	GetCameraVectorUp( void );						//  上向き方向ベクトルの取得
+	const D3DXVECTOR3&	GetCameraVecDirect( void );						//  方向ベクトルの取得
+	const D3DXVECTOR3&	GetCameraBasePosEye( void );					//  目標視点座標の取得
+	const D3DXVECTOR3&	GetCameraBasePosAt( void );						//  目標注視点座標の取得
+	const float&		GetCameraFov( void );							//  画角の取得
 
-	D3DXMATRIX			GetInvRotateMat( D3DXVECTOR3 position );		//  ビルボード用の行列取得
+	const D3DXMATRIX&	GetInvRotateMat( D3DXVECTOR3 position );		//  ビルボード用の行列取得
 
 	void				SetCamera( void );								//  カメラ行列の設定
 	void				SetViewport( void );							//  ビューポート行列の設定
