@@ -42,6 +42,7 @@ public:
 	void	SetLightViewProjectionMatrix( const D3DXMATRIX &lightViewProjectionMatrix );	//  ライトから見たビュープロジェクション行列の設定
 	void	SetOffset( const D3DXVECTOR4 &offset );											//  オフセット値
 	void	SetBias( const float& bias );													//  バイアス値の設定
+	void	SetFar( const float& farValue );												//  ファー値の設定
 	UINT	GetSamplerTextureIndex( void );													//  テクスチャサンプラーの取得
 	UINT	GetSamplerShadowIndex( void );													//  シャドウサンプラーの取得
 
@@ -51,7 +52,8 @@ public:
 						   const D3DXVECTOR3 &lightDirectionLocal ,
 						   const D3DXMATRIX &lightViewProjectionMatrix ,
 						   const D3DXVECTOR4 &offset ,
-						   const float& bias );
+						   const float& bias ,
+						   const float& farValue );
 
 	void	DrawBegin( void );																//  シェーダー描画開始
 

@@ -97,11 +97,8 @@ void EffekseerManager::Init( void )
 
 	aFileName[ TYPE_SLASH000 ]			= "sword000.efk";
 	aFileName[ TYPE_SLASH001 ]			= "sword001.efk";
-	aFileName[ TYPE_VANISH000 ]			= "vanish000.efk";
-	aFileName[ TYPE_VANISH001 ]			= "vanish001.efk";
-	aFileName[ TYPE_VANISH002 ]			= "vanish002.efk";
-	aFileName[ TYPE_VANISH003 ]			= "vanish003.efk";
-	aFileName[ TYPE_VANISH004 ]			= "vanish004.efk";
+	aFileName[ TYPE_SLASH002 ]			= "sword002.efk";
+	aFileName[ TYPE_SLASH003 ]			= "sword003.efk";
 	aFileName[ TYPE_DRILL ]				= "drill.efk";
 	aFileName[ TYPE_LANCE ]				= "lance.efk";
 	aFileName[ TYPE_BLOOD_LANCE ]		= "bloodLance.efk";
@@ -132,6 +129,9 @@ void EffekseerManager::Init( void )
 	aFileName[ TYPE_BRAVE ]				= "brave.efk";
 	aFileName[ TYPE_SHIELD ]			= "shield.efk";
 	aFileName[ TYPE_SMASH ]				= "smash.efk";
+	aFileName[ TYPE_THUNDER ]			= "thunder.efk";
+	aFileName[ TYPE_SYLPH ]				= "sylph.efk";
+	aFileName[ TYPE_JUMP_FOOT ]			= "jump_foot.efk";
 
 #pragma omp parallel for
 	//  エフェクトの数分のループ
@@ -158,11 +158,8 @@ void EffekseerManager::Uninit( void )
 
 	aFileName[ TYPE_SLASH000 ]			= "sword000.efk";
 	aFileName[ TYPE_SLASH001 ]			= "sword001.efk";
-	aFileName[ TYPE_VANISH000 ]			= "vanish000.efk";
-	aFileName[ TYPE_VANISH001 ]			= "vanish001.efk";
-	aFileName[ TYPE_VANISH002 ]			= "vanish002.efk";
-	aFileName[ TYPE_VANISH003 ]			= "vanish003.efk";
-	aFileName[ TYPE_VANISH004 ]			= "vanish004.efk";
+	aFileName[ TYPE_SLASH002 ]			= "sword002.efk";
+	aFileName[ TYPE_SLASH003 ]			= "sword003.efk";
 	aFileName[ TYPE_DRILL ]				= "drill.efk";
 	aFileName[ TYPE_LANCE ]				= "lance.efk";
 	aFileName[ TYPE_BLOOD_LANCE ]		= "bloodLance.efk";
@@ -193,6 +190,9 @@ void EffekseerManager::Uninit( void )
 	aFileName[ TYPE_BRAVE ]				= "brave.efk";
 	aFileName[ TYPE_SHIELD ]			= "shield.efk";
 	aFileName[ TYPE_SMASH ]				= "smash.efk";
+	aFileName[ TYPE_THUNDER ]			= "thunder.efk";
+	aFileName[ TYPE_SYLPH ]				= "sylph.efk";
+	aFileName[ TYPE_JUMP_FOOT ]			= "jump_foot.efk";
 
 	::Effekseer::Effect*	effect = NULL;
 
@@ -293,11 +293,8 @@ void EffekseerManager::Draw( void )
 
 	aFileName[ TYPE_SLASH000 ]			= "sword000.efk";
 	aFileName[ TYPE_SLASH001 ]			= "sword001.efk";
-	aFileName[ TYPE_VANISH000 ]			= "vanish000.efk";
-	aFileName[ TYPE_VANISH001 ]			= "vanish001.efk";
-	aFileName[ TYPE_VANISH002 ]			= "vanish002.efk";
-	aFileName[ TYPE_VANISH003 ]			= "vanish003.efk";
-	aFileName[ TYPE_VANISH004 ]			= "vanish004.efk";
+	aFileName[ TYPE_SLASH002 ]			= "sword002.efk";
+	aFileName[ TYPE_SLASH003 ]			= "sword003.efk";
 	aFileName[ TYPE_DRILL ]				= "drill.efk";
 	aFileName[ TYPE_LANCE ]				= "lance.efk";
 	aFileName[ TYPE_BLOOD_LANCE ]		= "bloodLance.efk";
@@ -328,6 +325,9 @@ void EffekseerManager::Draw( void )
 	aFileName[ TYPE_BRAVE ]				= "brave.efk";
 	aFileName[ TYPE_SHIELD ]			= "shield.efk";
 	aFileName[ TYPE_SMASH ]				= "smash.efk";
+	aFileName[ TYPE_THUNDER ]			= "thunder.efk";
+	aFileName[ TYPE_SYLPH ]				= "sylph.efk";
+	aFileName[ TYPE_JUMP_FOOT ]			= "jump_foot.efk";
 
 	// エフェクトの再生
 	handle = m_manager->Play( m_effectMap2.at( aFileName[ ( int )type ] ) , position.x , position.y , position.z );

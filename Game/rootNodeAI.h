@@ -10,6 +10,7 @@
 //  ヘッダーファイル
 //--------------------------------------------------------------------------------------
 #include "nodeAI.h"
+#include "characterAI.h"
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
@@ -24,13 +25,19 @@
 //--------------------------------------------------------------------------------------
 class RootNodeAI : public NodeAI
 {
-public: 
-	RootNodeAI( ){ }							//  コンストラクタ	
+public:
+	RootNodeAI( CharacterAI* characterAI ) :				//  コンストラクタ
+				NodeAI( CharacterAI::NODE_TYPE::ROOT ,
+						"root" ,
+						characterAI ,
+						nullptr ){ }							
 
-	void		Release( void ) override;
+	void		Release( void ) override;					//  解放
+	void		Run( void ) override;						//  実行
+	void		JudgeActive( void ) override;				//  実行可能かの判断をする
+	void		DrawDebug( void ) override;					//  デバッグ描画
 
 private:
-	void		AllJudgeActive( void );			//  全てのノードの実行可能状態の判断		
 };
 
 #endif

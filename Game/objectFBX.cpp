@@ -25,26 +25,25 @@
 //--------------------------------------------------------------------------------------
 //  定数定義
 //--------------------------------------------------------------------------------------
-static const char THUN_SHADER_TEXTURE_NAME[ 256 ]	= "data/SHADER/thun001.png";
-static const char NONE_SPECULAR_TEXTURE_NAME[ 256 ]	= "data\\TEXTURE\\fade.png";
+static const char	THUN_SHADER_TEXTURE_NAME[ 256 ]		= "data/SHADER/thun001.png";
+static const char	NONE_SPECULAR_TEXTURE_NAME[ 256 ]	= "data\\TEXTURE\\fade.png";
 
-static const char TEXTURE_FILEPATH[ 256 ]			= "data\\FBX\\texture";
+static const char	TEXTURE_FILEPATH[ 256 ]				= "data\\FBX\\texture";
 
-static const float PLAYER_TO_CAMERA_DISTANCE_Y = 8.0f;
-static const float PLAYER_TO_CAMERA_DISTANCE_Z = 20.0f;
+static const float	PLAYER_TO_CAMERA_DISTANCE_Y			= 8.0f;
+static const float	PLAYER_TO_CAMERA_DISTANCE_Z			= 20.0f;
 
 //--------------------------------------------------------------------------------------
 //  コンストラクタ
 //--------------------------------------------------------------------------------------
 ObjectFBX::ObjectFBX( )
 {
-	m_startTime = 0;
-	m_endTime = 0;
 	m_currentFrame = 0;
 	m_allTime = 0;
 	m_scale = 1.0f;
 	m_translation = D3DXVECTOR3( 0.0f , 0.0f , 0.0f );
 	m_drawDepth = true;
+	m_animationIndex = 0;
 }
 
 //--------------------------------------------------------------------------------------
@@ -70,7 +69,8 @@ HRESULT ObjectFBX::Init( void )
 	FbxImporter* lImporter = FbxImporter::Create( lSdkManager ,"" ); 
  
 	// Use the first argument as the filename for the importer. 
-	if( !lImporter->Initialize( "data/FBX/rauder/rauder_test.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
+	if( !lImporter->Initialize( "data/FBX/winks/winks.fbx" , -1, lSdkManager->GetIOSettings( ) ) ) 
+	//if( !lImporter->Initialize( "data/FBX/rauder/rauder.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
 	{      
 		char buf[ 256 ];     
 		sprintf( buf , "Call to FbxImporter::Initialize() failed.\nError returned: %s\n\n" , lImporter->GetStatus( ).GetErrorString( ) );     
@@ -97,17 +97,6 @@ HRESULT ObjectFBX::Init( void )
 
 	//  アニメーション個数の取得
 	lImporter->GetAnimStackCount( );
-
-	//  アニメーション一覧の取得
-	FbxArray< FbxString* > animationNames;
-	lScene->FillAnimStackNameArray( animationNames );
-
-	//  アニメーション情報の取得
-	FbxTakeInfo* pTakeInfo = lScene->GetTakeInfo( animationNames[ 0 ]->Buffer( ) );
-
-	//  アニメーションの開始・終了時間の取得
-	m_startTime = pTakeInfo->mLocalTimeSpan.GetStart( );
-	m_endTime = pTakeInfo->mLocalTimeSpan.GetStop( );
 
 	//  メッシュ数の取得
 	int numberMesh = lScene->GetMemberCount< FbxMesh >( );
@@ -334,32 +323,49 @@ HRESULT ObjectFBX::Init( void )
 	//  トゥーンシェーダー用のテクスチャ取得
 	texture->SetTextureImage( THUN_SHADER_TEXTURE_NAME );
 
-	//  FBXモデル読み込み実験用プログラム
-	lSdkManager = FbxManager::Create( ); 
- 
-	// Create the IO settings object. 
-	ios = FbxIOSettings::Create( lSdkManager , IOSROOT ); lSdkManager->SetIOSettings( ios ); 
- 
-	// Create an importer using the SDK manager. 
-	lImporter = FbxImporter::Create( lSdkManager ,"" ); 
+	char winksFileName[ 8 ][ 256 ] = {
+											"data/FBX/winks/Animations/air_attack01.fbx" ,
+											"data/FBX/winks/Animations/air_attack02.fbx" ,
+											"data/FBX/winks/Animations/hp_attack.fbx" ,
+											"data/FBX/winks/Animations/jump.fbx" ,
+											"data/FBX/winks/Animations/landing.fbx" ,
+											"data/FBX/winks/Animations/grand_guard_start.fbx" ,
+											"data/FBX/winks/Animations/grand_guard_end.fbx" ,
+											"data/FBX/winks/Animations/attack02.fbx" ,
+									 };
 
-	// Use the first argument as the filename for the importer. 
-	if( !lImporter->Initialize( "data/FBX/winks/Animations/idle_test.fbx", -1, lSdkManager->GetIOSettings( ) ) ) 
-	{      
-		char buf[ 256 ];     
-		sprintf( buf , "Call to FbxImporter::Initialize() failed.\nError returned: %s\n\n" , lImporter->GetStatus( ).GetErrorString( ) );     
-		MessageBox( NULL , buf , "error" , MB_OK );     
-		return E_FAIL; 
-	}  
- 
-	// Create a new scene so that it can be populated by the imported file. 
-	lScene = FbxScene::Create( lSdkManager , "myScene" ); 
- 
-	// Import the contents of the file into the scene. 
-	lImporter->Import( lScene ); 
+	char rauderFileName[ 8 ][ 256 ] = {
+											"data/FBX/rauder/Animations/idle.fbx" ,
+											"data/FBX/rauder/Animations/jump.fbx" ,
+											"data/FBX/rauder/Animations/attack01.fbx" ,
+											"data/FBX/rauder/Animations/attack02.fbx" ,
+											"data/FBX/rauder/Animations/attack03.fbx" ,
+											"data/FBX/rauder/Animations/HPattack_ground.fbx" ,
+											"data/FBX/rauder/Animations/step_left.fbx" ,
+											"data/FBX/rauder/Animations/step_right.fbx" ,
+									  };
 
-	//  メッシュがないアニメーションのデータ取得
-	AnalyzeNoMeshAnimation( lImporter , lScene , animator );
+	for( int countAnimation = 0; countAnimation < 8; countAnimation++ )
+	{
+		// Use the first argument as the filename for the importer. 
+		if( !lImporter->Initialize( winksFileName[ countAnimation ] , -1 , lSdkManager->GetIOSettings( ) ) ) 
+		//if( !lImporter->Initialize( rauderFileName[ countAnimation ] , -1 , lSdkManager->GetIOSettings( ) ) ) 
+		{      
+			char buf[ 256 ];     
+			sprintf( buf , "Call to FbxImporter::Initialize() failed.\nError returned: %s\n\n" , lImporter->GetStatus( ).GetErrorString( ) );     
+			MessageBox( NULL , buf , "error" , MB_OK );     
+			return E_FAIL; 
+		}  
+ 
+		// Create a new scene so that it can be populated by the imported file. 
+		lScene = FbxScene::Create( lSdkManager , "myScene" ); 
+ 
+		// Import the contents of the file into the scene. 
+		lImporter->Import( lScene ); 
+
+		//  メッシュがないアニメーションのデータ取得
+		AnalyzeNoMeshAnimation( lImporter , lScene , animator );
+	}
 
 	//  アニメーションデータの保存
 	m_animator = animator;
@@ -419,8 +425,84 @@ void ObjectFBX::Update( void )
 	////  カメラの取得
 	//Camera* pCamera = SceneManager::GetCamera( );
 
-	//// キーボード情報の取得
-	//Keyboard* pKeyboard = SceneManager::GetKeyboard( );
+	// キーボード情報の取得
+	Keyboard* pKeyboard = SceneManager::GetKeyboard( );
+
+	if( pKeyboard != nullptr )
+	{
+		if( pKeyboard->GetKeyboardPress( DIK_1 ) )
+		{
+			if( m_animationIndex != 0 )
+			{
+				m_animationIndex = 0;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_2 ) )
+		{
+			if( m_animationIndex != 1 )
+			{
+				m_animationIndex = 1;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_3 ) )
+		{
+			if( m_animationIndex != 2 )
+			{
+				m_animationIndex = 2;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_4 ) )
+		{
+			if( m_animationIndex != 3 )
+			{
+				m_animationIndex = 3;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_5 ) )
+		{
+			if( m_animationIndex != 4 )
+			{
+				m_animationIndex = 4;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_6 ) )
+		{
+			if( m_animationIndex != 5 )
+			{
+				m_animationIndex = 5;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_7 ) )
+		{
+			if( m_animationIndex != 6 )
+			{
+				m_animationIndex = 6;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_8 ) )
+		{
+			if( m_animationIndex != 7 )
+			{
+				m_animationIndex = 7;
+				m_currentFrame = 0;
+			}
+		}
+		else if( pKeyboard->GetKeyboardPress( DIK_9 ) )
+		{
+			if( m_animationIndex != 8 )
+			{
+				m_animationIndex = 8;
+				m_currentFrame = 0;
+			}
+		}
+	}
 
 	////  移動量の初期化
 	//D3DXVECTOR3 move = D3DXVECTOR3( 0.0f , 0.0f , 0.0f );
@@ -535,7 +617,9 @@ void ObjectFBX::recursiveDraw( void )
 
 	for( int countMesh = 0; countMesh != m_meshes.size( ); ++countMesh ) 
 	{  
-		if( m_meshes[ countMesh ].materialName == "hair" )
+		if( m_meshes[ countMesh ].materialName == "hair" || 
+			m_meshes[ countMesh ].materialName == "eye" || 
+			m_meshes[ countMesh ].materialName == "eyelashes" )
 		{
 			continue;
 		}
@@ -548,13 +632,13 @@ void ObjectFBX::recursiveDraw( void )
  
 		D3DXMATRIX mtx;             
 				
-		for( int countPoint = 0; countPoint < m_meshes[ countMesh ].points.size( ); ++countPoint ) 
+		for( unsigned int countPoint = 0; countPoint < m_meshes[ countMesh ].points.size( ); ++countPoint ) 
 		{
 			ZeroMemory( &mtx, sizeof( D3DXMATRIX ) );   
 
 			for( unsigned int countBorn = 0; countBorn < m_meshes[ countMesh ].points[ countPoint ].bornRefarences.size( ); ++countBorn )
 			{
-				mtx += m_animator->motion[ 0 ].frame[ m_currentFrame % m_animator->motion[ 0 ].frame.size( ) ].matrix[ m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].index ] * m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].weight;
+				mtx += m_animator->motion[ m_animationIndex ].frame[ m_currentFrame % m_animator->motion[ m_animationIndex ].frame.size( ) ].matrix[ m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].index ] * m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].weight;
 			}
 
 			if( m_meshes[ countMesh ].points[ countPoint ].bornRefarences.size( ) == 0 )
@@ -565,7 +649,7 @@ void ObjectFBX::recursiveDraw( void )
 			D3DXVECTOR3 pos = m_meshes[ countMesh ].points[ countPoint ].positions;
 
 			D3DXVec3TransformCoord( &pos , &pos , &mtx );                
-			positions.push_back( m_meshes[ countMesh ].points[ countPoint ].positions );             
+			positions.push_back( pos );             
 		} 
 
 		VERTEX_3D* pVtx = NULL;				//  頂点バッファのポインタ
@@ -676,13 +760,13 @@ void ObjectFBX::recursiveDraw( void )
  
 		D3DXMATRIX mtx;             
 
-		for( int countPoint = 0; countPoint < m_meshes[ countMesh ].points.size( ); ++countPoint ) 
+		for( unsigned int countPoint = 0; countPoint < m_meshes[ countMesh ].points.size( ); ++countPoint ) 
 		{
 			ZeroMemory( &mtx, sizeof( D3DXMATRIX ) );   
 
 			for( unsigned int countBorn = 0; countBorn < m_meshes[ countMesh ].points[ countPoint ].bornRefarences.size( ); ++countBorn )
 			{
-				mtx += m_animator->motion[ 0 ].frame[ m_currentFrame % m_animator->motion[ 0 ].frame.size( ) ].matrix[ m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].index ] * m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].weight;
+				mtx += m_animator->motion[ m_animationIndex ].frame[ m_currentFrame % m_animator->motion[ m_animationIndex ].frame.size( ) ].matrix[ m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].index ] * m_meshes[ countMesh ].points[ countPoint ].bornRefarences[ countBorn ].weight;
 			}
 
 			if( m_meshes[ countMesh ].points[ countPoint ].bornRefarences.size( ) == 0 )
@@ -693,7 +777,7 @@ void ObjectFBX::recursiveDraw( void )
 			D3DXVECTOR3 pos = m_meshes[ countMesh ].points[ countPoint ].positions;
 
 			D3DXVec3TransformCoord( &pos , &pos , &mtx );                
-			positions.push_back( m_meshes[ countMesh ].points[ countPoint ].positions );             
+			positions.push_back( pos );             
 		} 
 
 		VERTEX_3D* pVtx = NULL;				//  頂点バッファのポインタ
@@ -885,7 +969,7 @@ void ObjectFBX::DrawDepth( void )
 
 			for( unsigned int countBorn = 0; countBorn < it->bornRefarences.size( ); ++countBorn )
 			{
-				mtx += m_animator->motion[ 0 ].frame[ m_currentFrame % m_animator->motion[ 0 ].frame.size( ) ].matrix[ it->bornRefarences[ countBorn ].index ] * it->bornRefarences[ countBorn ].weight;
+				mtx += m_animator->motion[ m_animationIndex ].frame[ m_currentFrame % m_animator->motion[ m_animationIndex ].frame.size( ) ].matrix[ it->bornRefarences[ countBorn ].index ] * it->bornRefarences[ countBorn ].weight;
 			}
 
 			if( it->bornRefarences.size( ) == 0 )
@@ -1428,7 +1512,7 @@ ObjectFBX::Animator* ObjectFBX::AnalyzeAnimation( FbxImporter* importer , FbxSce
 		//  フレーム数分のメモリ確保
 		motion.frame.reserve( allTime );
 
-		for( FbxTime currentTime = m_startTime; currentTime < m_endTime; currentTime += oneFrameTime )
+		for( FbxTime currentTime = startTime; currentTime < endTime; currentTime += oneFrameTime )
 		{
 			Frame frame;
 			frame.matrix.resize( mapCluster.size( ) );
@@ -1491,7 +1575,7 @@ void ObjectFBX::AnalyzeNoMeshAnimation( FbxImporter* importer , FbxScene* scene 
 	//  再帰的にスケルトン検索
 	FindSkeleton( rootNode , skeleton );
 
-	if( skeleton.size( ) != animator->cluster.size( ) )
+	if( skeleton.size( ) < animator->cluster.size( ) )
 	{
 		return;
 	}
@@ -1526,7 +1610,7 @@ void ObjectFBX::AnalyzeNoMeshAnimation( FbxImporter* importer , FbxScene* scene 
 		//  フレーム数分のメモリ確保
 		motion.frame.reserve( allTime );
 
-		for( FbxTime currentTime = m_startTime; currentTime < m_endTime; currentTime += oneFrameTime )
+		for( FbxTime currentTime = startTime; currentTime < endTime; currentTime += oneFrameTime )
 		{
 			Frame frame;
 			frame.matrix.resize( skeleton.size( ) );
@@ -1536,7 +1620,7 @@ void ObjectFBX::AnalyzeNoMeshAnimation( FbxImporter* importer , FbxScene* scene 
 				//  スケルトン名の取得
 				std::string name = single->GetName( );
 
-				int clusterNo;
+				int clusterNo = -1;
 
 				for( unsigned int countCluster = 0; countCluster < animator->cluster.size( ); ++countCluster )
 				{
@@ -1548,13 +1632,18 @@ void ObjectFBX::AnalyzeNoMeshAnimation( FbxImporter* importer , FbxScene* scene 
 					}
 				}
 
+				if( clusterNo == -1 )
+				{
+					continue;
+				}
+
 				FbxAMatrix bornMatrix = single->EvaluateGlobalTransform( currentTime );
 
 				for( int y = 0; y < 4; y++ ) 
 				{                 
 					for( int x = 0; x < 4; x++ ) 
 					{ 
-						frame.matrix[ clusterNo ]( x , y ) = ( float )bornMatrix.Get( x , y );                 
+						frame.matrix[ clusterNo ]( x , y ) = ( float )bornMatrix.Get( x , y );        
 					}  
 				} 	
 

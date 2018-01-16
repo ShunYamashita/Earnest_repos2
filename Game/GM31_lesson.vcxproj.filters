@@ -48,12 +48,6 @@
     <Filter Include="ソース ファイル\AI\characterAI">
       <UniqueIdentifier>{aaa50c81-8323-4a2c-af82-a0f55c0f1495}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\AI\behaviorTree">
-      <UniqueIdentifier>{7e5fc652-f49e-45da-92ee-a1db024142eb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\AI\stateMachine">
-      <UniqueIdentifier>{af8eef94-2790-4a9c-9fae-793719f824ae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\AI\metaAI">
       <UniqueIdentifier>{e1993697-68dd-4d48-9fde-2664e18f327a}</UniqueIdentifier>
     </Filter>
@@ -189,8 +183,56 @@
     <Filter Include="ソース ファイル\AI\navigationAI">
       <UniqueIdentifier>{dec24a8c-bf98-4732-862f-d85b0d367e85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\AI\abstract">
+    <Filter Include="ソース ファイル\mode\game\object\field">
+      <UniqueIdentifier>{f938b5ae-8071-42ce-b96c-6b7d574a096b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\other">
+      <UniqueIdentifier>{41850b84-403c-4667-b772-4071e41aa213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI\behaviorTree">
+      <UniqueIdentifier>{7e5fc652-f49e-45da-92ee-a1db024142eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI\behaviorTree\node">
+      <UniqueIdentifier>{8d984fe7-cbe0-4768-92ab-076c051db6c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI\behaviorTree\layer">
+      <UniqueIdentifier>{aae02cd5-0dad-497b-83b8-1b68f5b5d485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI\stateMachine">
+      <UniqueIdentifier>{af8eef94-2790-4a9c-9fae-793719f824ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI\stateMachine\node">
+      <UniqueIdentifier>{577cb987-0e26-41a8-84c1-f34c912b97b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\AI\characterAI\abstract">
       <UniqueIdentifier>{8590bd7b-8142-44b2-89a3-e159fa048a56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\winks">
+      <UniqueIdentifier>{9647b0a3-b8f3-4c8e-a368-730f86e36cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\rauder">
+      <UniqueIdentifier>{76e7830f-3091-43ff-b7a2-550e343634fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\winks\player">
+      <UniqueIdentifier>{76df3f24-97a1-4984-b27a-4e2164ad77ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\winks\player\state">
+      <UniqueIdentifier>{6be4edd5-7568-41eb-b56d-7956fc0bdf29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\rauder\player">
+      <UniqueIdentifier>{9dc7bcd3-ce55-455e-b7fc-35268adf0e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\rauder\player\state">
+      <UniqueIdentifier>{ef04e470-1a54-4625-8682-16bf28fbc4ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\winks\enemy">
+      <UniqueIdentifier>{f4782b31-4d0c-43aa-a242-18de5d5a7d86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\rauder\enemy">
+      <UniqueIdentifier>{68b549ba-1f07-4795-9192-bed46ee64df6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mode\game\object\rauder\enemy\state">
+      <UniqueIdentifier>{2eb476ab-ac1a-4455-96bb-3f4ce2bc2359}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -250,9 +292,6 @@
     </ClCompile>
     <ClCompile Include="xboxController.cpp">
       <Filter>ソース ファイル\input</Filter>
-    </ClCompile>
-    <ClCompile Include="meshCube.cpp">
-      <Filter>ソース ファイル\mesh</Filter>
     </ClCompile>
     <ClCompile Include="meshDome.cpp">
       <Filter>ソース ファイル\mesh</Filter>
@@ -361,24 +400,6 @@
     </ClCompile>
     <ClCompile Include="selectVSMode.cpp">
       <Filter>ソース ファイル\mode\stageSelect\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>ソース ファイル\mode\game</Filter>
-    </ClCompile>
-    <ClCompile Include="bullet.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="field.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="hitField.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="item.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClCompile>
-    <ClCompile Include="shadow.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
     </ClCompile>
     <ClCompile Include="stateAnimator.cpp">
       <Filter>ソース ファイル\mode\game</Filter>
@@ -515,9 +536,6 @@
     <ClCompile Include="shader3DShadowMap.cpp">
       <Filter>ソース ファイル\shader\3D</Filter>
     </ClCompile>
-    <ClCompile Include="block.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>ソース ファイル\mode\game\object\enemy</Filter>
     </ClCompile>
@@ -526,9 +544,6 @@
     </ClCompile>
     <ClCompile Include="shader3DThun.cpp">
       <Filter>ソース ファイル\shader\3D</Filter>
-    </ClCompile>
-    <ClCompile Include="rootNodeAI.cpp">
-      <Filter>ソース ファイル\AI</Filter>
     </ClCompile>
     <ClCompile Include="shader3DOutline.cpp">
       <Filter>ソース ファイル\shader\3D</Filter>
@@ -548,12 +563,6 @@
     <ClCompile Include="metaAI.cpp">
       <Filter>ソース ファイル\AI\metaAI</Filter>
     </ClCompile>
-    <ClCompile Include="layerAI.cpp">
-      <Filter>ソース ファイル\AI\abstract</Filter>
-    </ClCompile>
-    <ClCompile Include="wall.cpp">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClCompile>
     <ClCompile Include="playerFreeDash.cpp">
       <Filter>ソース ファイル\mode\game\object\player\state</Filter>
     </ClCompile>
@@ -562,6 +571,204 @@
     </ClCompile>
     <ClCompile Include="cascadeShadow.cpp">
       <Filter>ソース ファイル\shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="meshBoundingBox.cpp">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="shader3DCascadeShadow.cpp">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>ソース ファイル\mode\game</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyLockonDash.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyMagicActive.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyMagicReady.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyMove.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyNeutral.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyPassive.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyState.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyBend.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyBlow.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyBraveAttack000After.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyBraveAttack000Before.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyEscape.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyFreeDash.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyGuard.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyHPAttack000.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyJump.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyLanding.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyResultWin.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRushAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyResultLose.cpp">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="block.cpp">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClCompile>
+    <ClCompile Include="field.cpp">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClCompile>
+    <ClCompile Include="hitField.cpp">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClCompile>
+    <ClCompile Include="wall.cpp">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>ソース ファイル\mode\game\object\other</Filter>
+    </ClCompile>
+    <ClCompile Include="shadow.cpp">
+      <Filter>ソース ファイル\mode\game\object\other</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>ソース ファイル\mode\game\object\other</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="ruleNodeAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\node</Filter>
+    </ClCompile>
+    <ClCompile Include="rootNodeAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI</Filter>
+    </ClCompile>
+    <ClCompile Include="actionNodeAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\node</Filter>
+    </ClCompile>
+    <ClCompile Include="layerAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="stateMachineAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\stateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="behaviorTreeAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree</Filter>
+    </ClCompile>
+    <ClCompile Include="stateNodeAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\stateMachine\node</Filter>
+    </ClCompile>
+    <ClCompile Include="fbxLoader.cpp">
+      <Filter>ソース ファイル\FBX</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksState.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksIdle.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksMove.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksJump.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinks.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRauder.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\player</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRauder.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRauderState.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRauderIdle.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRauderMove.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRauderJump.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRauderAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRauderState.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRauderIdle.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRauderMove.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRauderJump.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerRauderAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksFreeDash.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksLockonDash.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksGuard.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksLanding.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksHPAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="playerWinksAirAttack.cpp">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClCompile>
+    <ClCompile Include="sequenceLayerAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="randomLayerAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="priorityLayerAI.cpp">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\layer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -621,9 +828,6 @@
     </ClInclude>
     <ClInclude Include="xboxController.h">
       <Filter>ソース ファイル\input</Filter>
-    </ClInclude>
-    <ClInclude Include="meshCube.h">
-      <Filter>ソース ファイル\mesh</Filter>
     </ClInclude>
     <ClInclude Include="meshDome.h">
       <Filter>ソース ファイル\mesh</Filter>
@@ -769,21 +973,6 @@
     <ClInclude Include="game.h">
       <Filter>ソース ファイル\mode\game</Filter>
     </ClInclude>
-    <ClInclude Include="shadow.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="bullet.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="field.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="hitField.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClInclude>
-    <ClInclude Include="item.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClInclude>
     <ClInclude Include="stateAnimator.h">
       <Filter>ソース ファイル\mode\game</Filter>
     </ClInclude>
@@ -925,9 +1114,6 @@
     <ClInclude Include="shader3DShadowMap.h">
       <Filter>ソース ファイル\shader\3D</Filter>
     </ClInclude>
-    <ClInclude Include="block.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
-    </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>ソース ファイル\mode\game\object\enemy</Filter>
     </ClInclude>
@@ -937,9 +1123,6 @@
     <ClInclude Include="shader3DThun.h">
       <Filter>ソース ファイル\shader\3D</Filter>
     </ClInclude>
-    <ClInclude Include="rootNodeAI.h">
-      <Filter>ソース ファイル\AI</Filter>
-    </ClInclude>
     <ClInclude Include="shader3DOutline.h">
       <Filter>ソース ファイル\shader\3D</Filter>
     </ClInclude>
@@ -948,9 +1131,6 @@
     </ClInclude>
     <ClInclude Include="boneTexture.h">
       <Filter>ソース ファイル\boneInfoTexture</Filter>
-    </ClInclude>
-    <ClInclude Include="stateMachinAI.h">
-      <Filter>ソース ファイル\AI\stateMachine</Filter>
     </ClInclude>
     <ClInclude Include="navigationAI.h">
       <Filter>ソース ファイル\AI\navigationAI</Filter>
@@ -962,13 +1142,7 @@
       <Filter>ソース ファイル\AI\metaAI</Filter>
     </ClInclude>
     <ClInclude Include="nodeAI.h">
-      <Filter>ソース ファイル\AI\abstract</Filter>
-    </ClInclude>
-    <ClInclude Include="layerAI.h">
-      <Filter>ソース ファイル\AI\abstract</Filter>
-    </ClInclude>
-    <ClInclude Include="wall.h">
-      <Filter>ソース ファイル\mode\game\object</Filter>
+      <Filter>ソース ファイル\AI\characterAI\abstract</Filter>
     </ClInclude>
     <ClInclude Include="playerFreeDash.h">
       <Filter>ソース ファイル\mode\game\object\player\state</Filter>
@@ -981,6 +1155,198 @@
     </ClInclude>
     <ClInclude Include="Wwise_IDs.h">
       <Filter>ソース ファイル\Wwise</Filter>
+    </ClInclude>
+    <ClInclude Include="meshBoundingBox.h">
+      <Filter>ソース ファイル\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="shader3DCascadeShaow.h">
+      <Filter>ソース ファイル\shader\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyLockonDash.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyMagicActive.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyMagicReady.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyMove.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyNeutral.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyPassive.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyState.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyBend.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyBlow.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyBraveAttack000After.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyBraveAttack000Before.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyEscape.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyFreeDash.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyGuard.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyHPAttack000.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyJump.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyLanding.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyResultWin.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRushAttack.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyResultLose.h">
+      <Filter>ソース ファイル\mode\game\object\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClInclude>
+    <ClInclude Include="field.h">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClInclude>
+    <ClInclude Include="hitField.h">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClInclude>
+    <ClInclude Include="wall.h">
+      <Filter>ソース ファイル\mode\game\object\field</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>ソース ファイル\mode\game\object\other</Filter>
+    </ClInclude>
+    <ClInclude Include="shadow.h">
+      <Filter>ソース ファイル\mode\game\object\other</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>ソース ファイル\mode\game\object\other</Filter>
+    </ClInclude>
+    <ClInclude Include="ruleNodeAI.h">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\node</Filter>
+    </ClInclude>
+    <ClInclude Include="rootNodeAI.h">
+      <Filter>ソース ファイル\AI\characterAI</Filter>
+    </ClInclude>
+    <ClInclude Include="actionNodeAI.h">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\node</Filter>
+    </ClInclude>
+    <ClInclude Include="layerAI.h">
+      <Filter>ソース ファイル\AI\characterAI\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="stateMachineAI.h">
+      <Filter>ソース ファイル\AI\characterAI\stateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="behaviorTreeAI.h">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree</Filter>
+    </ClInclude>
+    <ClInclude Include="stateNodeAI.h">
+      <Filter>ソース ファイル\AI\characterAI\stateMachine\node</Filter>
+    </ClInclude>
+    <ClInclude Include="fbxLoader.h">
+      <Filter>ソース ファイル\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksState.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksIdle.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksMove.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksJump.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinks.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRauder.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\player</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRauder.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRauderState.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRauderIdle.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRauderMove.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksAttack.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRauderJump.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRauderAttack.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRauderState.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRauderIdle.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRauderMove.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRauderJump.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerRauderAttack.h">
+      <Filter>ソース ファイル\mode\game\object\rauder\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksFreeDash.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksLockonDash.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksGuard.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksLanding.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksHPAttack.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="playerWinksAirAttack.h">
+      <Filter>ソース ファイル\mode\game\object\winks\player\state</Filter>
+    </ClInclude>
+    <ClInclude Include="sequenceLayerAI.h">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="randomLayerAI.h">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="priorityLayerAI.h">
+      <Filter>ソース ファイル\AI\characterAI\behaviorTree\layer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1035,7 +1401,17 @@
     <None Include="data\HLSL\3D\thunVS.hlsl">
       <Filter>HLSL\3D</Filter>
     </None>
-    <None Include="data\HLSL\3D\playerPS.hlsl" />
-    <None Include="data\HLSL\3D\playerVS.hlsl" />
+    <None Include="data\HLSL\3D\cascadeShadowPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\cascadeShadowVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\playerPS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
+    <None Include="data\HLSL\3D\playerVS.hlsl">
+      <Filter>HLSL\3D</Filter>
+    </None>
   </ItemGroup>
 </Project>

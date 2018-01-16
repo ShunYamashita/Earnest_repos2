@@ -180,8 +180,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="actionNodeAI.cpp" />
     <ClCompile Include="AIManager.cpp" />
     <ClCompile Include="animation.cpp" />
+    <ClCompile Include="behaviorTreeAI.cpp" />
     <ClCompile Include="block.cpp" />
     <ClCompile Include="boneTexture.cpp" />
     <ClCompile Include="brave.cpp" />
@@ -196,7 +198,34 @@
     <ClCompile Include="effekseerManager.cpp" />
     <ClCompile Include="emitter.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="enemyBend.cpp" />
+    <ClCompile Include="enemyBlow.cpp" />
+    <ClCompile Include="enemyBraveAttack000After.cpp" />
+    <ClCompile Include="enemyBraveAttack000Before.cpp" />
+    <ClCompile Include="enemyEscape.cpp" />
+    <ClCompile Include="enemyFreeDash.cpp" />
+    <ClCompile Include="enemyGuard.cpp" />
+    <ClCompile Include="enemyHPAttack000.cpp" />
+    <ClCompile Include="enemyJump.cpp" />
+    <ClCompile Include="enemyLanding.cpp" />
+    <ClCompile Include="enemyLockonDash.cpp" />
+    <ClCompile Include="enemyMagicActive.cpp" />
+    <ClCompile Include="enemyMagicReady.cpp" />
+    <ClCompile Include="enemyMove.cpp" />
+    <ClCompile Include="enemyNeutral.cpp" />
+    <ClCompile Include="enemyPassive.cpp" />
+    <ClCompile Include="enemyRauder.cpp" />
+    <ClCompile Include="enemyRauderAttack.cpp" />
+    <ClCompile Include="enemyRauderIdle.cpp" />
+    <ClCompile Include="enemyRauderJump.cpp" />
+    <ClCompile Include="enemyRauderMove.cpp" />
+    <ClCompile Include="enemyRauderState.cpp" />
+    <ClCompile Include="enemyResultLose.cpp" />
+    <ClCompile Include="enemyResultWin.cpp" />
+    <ClCompile Include="enemyRushAttack.cpp" />
+    <ClCompile Include="enemyState.cpp" />
     <ClCompile Include="fade.cpp" />
+    <ClCompile Include="fbxLoader.cpp" />
     <ClCompile Include="field.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="hitField.cpp" />
@@ -216,13 +245,14 @@
     <ClCompile Include="magicTornade.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="manager.cpp" />
-    <ClCompile Include="meshCube.cpp" />
+    <ClCompile Include="meshBoundingBox.cpp" />
     <ClCompile Include="meshDome.cpp" />
     <ClCompile Include="meshField.cpp" />
     <ClCompile Include="meshSphere.cpp" />
     <ClCompile Include="meshWall.cpp" />
     <ClCompile Include="metaAI.cpp" />
     <ClCompile Include="navigationAI.cpp" />
+    <ClCompile Include="nodeAI.cpp" />
     <ClCompile Include="number.cpp" />
     <ClCompile Include="objectFBX.cpp" />
     <ClCompile Include="particle.cpp" />
@@ -243,6 +273,12 @@
     <ClCompile Include="playerMove.cpp" />
     <ClCompile Include="playerNeutral.cpp" />
     <ClCompile Include="playerPassive.cpp" />
+    <ClCompile Include="playerRauder.cpp" />
+    <ClCompile Include="playerRauderAttack.cpp" />
+    <ClCompile Include="playerRauderIdle.cpp" />
+    <ClCompile Include="playerRauderJump.cpp" />
+    <ClCompile Include="playerRauderMove.cpp" />
+    <ClCompile Include="playerRauderState.cpp" />
     <ClCompile Include="playerResult.cpp" />
     <ClCompile Include="playerResultLose.cpp" />
     <ClCompile Include="playerResultWin.cpp" />
@@ -250,10 +286,25 @@
     <ClCompile Include="playerSelect.cpp" />
     <ClCompile Include="playerState.cpp" />
     <ClCompile Include="playerUI.cpp" />
+    <ClCompile Include="playerWinks.cpp" />
+    <ClCompile Include="playerWinksAirAttack.cpp" />
+    <ClCompile Include="playerWinksAttack.cpp" />
+    <ClCompile Include="playerWinksFreeDash.cpp" />
+    <ClCompile Include="playerWinksGuard.cpp" />
+    <ClCompile Include="playerWinksHPAttack.cpp" />
+    <ClCompile Include="playerWinksIdle.cpp" />
+    <ClCompile Include="playerWinksJump.cpp" />
+    <ClCompile Include="playerWinksLanding.cpp" />
+    <ClCompile Include="playerWinksLockonDash.cpp" />
+    <ClCompile Include="playerWinksMove.cpp" />
+    <ClCompile Include="playerWinksState.cpp" />
+    <ClCompile Include="priorityLayerAI.cpp" />
+    <ClCompile Include="randomLayerAI.cpp" />
     <ClCompile Include="readySelect.cpp" />
     <ClCompile Include="renderer.cpp" />
     <ClCompile Include="result.cpp" />
     <ClCompile Include="rootNodeAI.cpp" />
+    <ClCompile Include="ruleNodeAI.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="scene2D.cpp" />
     <ClCompile Include="scene2DL.cpp" />
@@ -264,7 +315,9 @@
     <ClCompile Include="sceneModelAnim.cpp" />
     <ClCompile Include="sceneModelParts.cpp" />
     <ClCompile Include="selectVSMode.cpp" />
+    <ClCompile Include="sequenceLayerAI.cpp" />
     <ClCompile Include="shader3D.cpp" />
+    <ClCompile Include="shader3DCascadeShadow.cpp" />
     <ClCompile Include="shader3DDepthShadow.cpp" />
     <ClCompile Include="shader3DNoLight.cpp" />
     <ClCompile Include="shader3DNoTexture.cpp" />
@@ -279,6 +332,8 @@
     <ClCompile Include="stageSelect.cpp" />
     <ClCompile Include="stageSelect2D.cpp" />
     <ClCompile Include="stateAnimator.cpp" />
+    <ClCompile Include="stateMachineAI.cpp" />
+    <ClCompile Include="stateNodeAI.cpp" />
     <ClCompile Include="stencilShadow.cpp" />
     <ClCompile Include="teamLogo.cpp" />
     <ClCompile Include="test.cpp" />
@@ -306,8 +361,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\OpenGL_FBX\math.h" />
+    <ClInclude Include="actionNodeAI.h" />
     <ClInclude Include="AIManager.h" />
     <ClInclude Include="animation.h" />
+    <ClInclude Include="behaviorTreeAI.h" />
     <ClInclude Include="block.h" />
     <ClInclude Include="boneTexture.h" />
     <ClInclude Include="brave.h" />
@@ -322,7 +379,34 @@
     <ClInclude Include="effekseerManager.h" />
     <ClInclude Include="emitter.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemyBend.h" />
+    <ClInclude Include="enemyBlow.h" />
+    <ClInclude Include="enemyBraveAttack000After.h" />
+    <ClInclude Include="enemyBraveAttack000Before.h" />
+    <ClInclude Include="enemyEscape.h" />
+    <ClInclude Include="enemyFreeDash.h" />
+    <ClInclude Include="enemyGuard.h" />
+    <ClInclude Include="enemyHPAttack000.h" />
+    <ClInclude Include="enemyJump.h" />
+    <ClInclude Include="enemyLanding.h" />
+    <ClInclude Include="enemyLockonDash.h" />
+    <ClInclude Include="enemyMagicActive.h" />
+    <ClInclude Include="enemyMagicReady.h" />
+    <ClInclude Include="enemyMove.h" />
+    <ClInclude Include="enemyNeutral.h" />
+    <ClInclude Include="enemyPassive.h" />
+    <ClInclude Include="enemyRauder.h" />
+    <ClInclude Include="enemyRauderAttack.h" />
+    <ClInclude Include="enemyRauderIdle.h" />
+    <ClInclude Include="enemyRauderJump.h" />
+    <ClInclude Include="enemyRauderMove.h" />
+    <ClInclude Include="enemyRauderState.h" />
+    <ClInclude Include="enemyResultLose.h" />
+    <ClInclude Include="enemyResultWin.h" />
+    <ClInclude Include="enemyRushAttack.h" />
+    <ClInclude Include="enemyState.h" />
     <ClInclude Include="fade.h" />
+    <ClInclude Include="fbxLoader.h" />
     <ClInclude Include="field.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="hitField.h" />
@@ -343,7 +427,7 @@
     <ClInclude Include="magicTornade.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="manager.h" />
-    <ClInclude Include="meshCube.h" />
+    <ClInclude Include="meshBoundingBox.h" />
     <ClInclude Include="meshDome.h" />
     <ClInclude Include="meshField.h" />
     <ClInclude Include="meshSphere.h" />
@@ -372,6 +456,12 @@
     <ClInclude Include="playerMove.h" />
     <ClInclude Include="playerNeutral.h" />
     <ClInclude Include="playerPassive.h" />
+    <ClInclude Include="playerRauder.h" />
+    <ClInclude Include="playerRauderAttack.h" />
+    <ClInclude Include="playerRauderIdle.h" />
+    <ClInclude Include="playerRauderJump.h" />
+    <ClInclude Include="playerRauderMove.h" />
+    <ClInclude Include="playerRauderState.h" />
     <ClInclude Include="playerResult.h" />
     <ClInclude Include="playerResultLose.h" />
     <ClInclude Include="playerResultWin.h" />
@@ -379,10 +469,25 @@
     <ClInclude Include="playerSelect.h" />
     <ClInclude Include="playerState.h" />
     <ClInclude Include="playerUI.h" />
+    <ClInclude Include="playerWinks.h" />
+    <ClInclude Include="playerWinksAirAttack.h" />
+    <ClInclude Include="playerWinksAttack.h" />
+    <ClInclude Include="playerWinksFreeDash.h" />
+    <ClInclude Include="playerWinksGuard.h" />
+    <ClInclude Include="playerWinksHPAttack.h" />
+    <ClInclude Include="playerWinksIdle.h" />
+    <ClInclude Include="playerWinksJump.h" />
+    <ClInclude Include="playerWinksLanding.h" />
+    <ClInclude Include="playerWinksLockonDash.h" />
+    <ClInclude Include="playerWinksMove.h" />
+    <ClInclude Include="playerWinksState.h" />
+    <ClInclude Include="priorityLayerAI.h" />
+    <ClInclude Include="randomLayerAI.h" />
     <ClInclude Include="readySelect.h" />
     <ClInclude Include="renderer.h" />
     <ClInclude Include="result.h" />
     <ClInclude Include="rootNodeAI.h" />
+    <ClInclude Include="ruleNodeAI.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="scene2D.h" />
     <ClInclude Include="scene2DL.h" />
@@ -393,8 +498,10 @@
     <ClInclude Include="sceneModelAnim.h" />
     <ClInclude Include="sceneModelParts.h" />
     <ClInclude Include="selectVSMode.h" />
+    <ClInclude Include="sequenceLayerAI.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="shader3D.h" />
+    <ClInclude Include="shader3DCascadeShaow.h" />
     <ClInclude Include="shader3DDepthShadow.h" />
     <ClInclude Include="shader3DNoLight.h" />
     <ClInclude Include="shader3DNoTexture.h" />
@@ -410,7 +517,8 @@
     <ClInclude Include="stageSelect.h" />
     <ClInclude Include="stageSelect2D.h" />
     <ClInclude Include="stateAnimator.h" />
-    <ClInclude Include="stateMachinAI.h" />
+    <ClInclude Include="stateMachineAI.h" />
+    <ClInclude Include="stateNodeAI.h" />
     <ClInclude Include="stb_rect_pack.h" />
     <ClInclude Include="stb_textedit.h" />
     <ClInclude Include="stb_truetype.h" />
@@ -503,6 +611,14 @@
       <FileType>Document</FileType>
     </None>
     <None Include="data\HLSL\3D\playerVS.hlsl">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\HLSL\3D\cascadeShadowPS.hlsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="data\HLSL\3D\cascadeShadowVS.hlsl">
       <FileType>Document</FileType>
     </None>
   </ItemGroup>

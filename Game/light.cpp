@@ -61,7 +61,7 @@ HRESULT Light::Init( void )
 	m_light[ 0 ].Diffuse = D3DXCOLOR( 1.0f , 0.9f , 0.3f , 1.0f );				//  拡散光
 
 	//  光源の座標を代入
-	m_position = D3DXVECTOR3( 150.0f , 300.0f , 150.0f );
+	m_position = D3DXVECTOR3( 150.0f , 480.0f , 0.0f );
 	m_positionAt = D3DXVECTOR3( 0.0f, 0.0f, 0.0f );
 
 	D3DXVECTOR3 vecDir = m_positionAt - m_position;								//  法線の向き
@@ -76,7 +76,7 @@ HRESULT Light::Init( void )
 						&m_positionAt , 
 						&D3DXVECTOR3( 0.0f , 1.0f, 0.0f ) );
 
-	m_fov = 1.43f;
+	m_fov = 1.35f;
 	m_near = 1.0f;
 	m_far = 683.0f;
 
@@ -286,8 +286,6 @@ void Light::Draw( void )
 
 	//  シェーダーに必要な情報の設定
 	shader3D->SetShaderInfo( mtxWorld , viewMatrix , projectionMatrix , lightDirectLocal , lightDiffuseColor );
-	//shader3DDepthShadow->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix ,
-	//									lightDirectLocal , lightViewProjectionMatrix , tmpOffset );
 
 	UINT textureSampler = shader3DDepthShadow->GetSamplerTextureIndex( );
 	UINT shadowSampler = shader3DDepthShadow->GetSamplerShadowIndex( );
@@ -320,13 +318,10 @@ void Light::Draw( void )
 			pDevice->SetTexture( textureSampler , pTexture->GetTextureImage( m_aTextureName[ nCntMaterial ] ) );
 
 			//  シェーダーに必要な情報の設定
-			//shader3DDepthShadow->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix ,
-			//									lightDirectLocal , lightViewProjectionMatrix , tmpOffset );
 			shader3D->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix , lightDirectLocal , lightDiffuseColor );
 
 			////  シェーダー3Dの描画開始
 			shader3D->DrawBegin( );
-			//shader3DDepthShadow->DrawBegin( );
 		}
 
 		//  メッシュの描画

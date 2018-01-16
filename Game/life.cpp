@@ -53,7 +53,7 @@ Life::Life( )
 	//  情報の代入
 	m_position = D3DXVECTOR3( 0.0f , 0.0f , 0.0f );
 	m_size = D3DXVECTOR3( 0.0f , 0.0f , 0.0f );
-	m_color = D3DXCOLOR( 0.0f , 0.9f , 1.0f , 1.0f );
+	m_color = D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f );
 	m_posUV = D3DXVECTOR2( 0.0f , 0.0f );
 	m_divideUV = D3DXVECTOR2( 0.0f , 0.0f );
 	m_nLife = 0;
@@ -108,34 +108,34 @@ HRESULT Life::Init( void )
 		{
 			//  数字クラスの生成
 			m_pNumber.push_back( Number::Create( D3DXVECTOR3( LIFE000_POS_X + LIFE000_SIZE_X * nCntDigit , LIFE000_POS_Y , 0.0f ) ,
-															   D3DXVECTOR3( LIFE000_SIZE_X , LIFE000_SIZE_Y , 0.0f ) ,
-															   D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
-															   nNumber ) );
+															  D3DXVECTOR3( LIFE000_SIZE_X , LIFE000_SIZE_Y , 0.0f ) ,
+															  D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
+															  nNumber ) );
 		}
 		else if( m_type == Life::TYPE_LIFE001 )
 		{
 			//  数字クラスの生成
 			m_pNumber.push_back( Number::Create( D3DXVECTOR3( LIFE001_POS_X + LIFE001_SIZE_X * nCntDigit , LIFE001_POS_Y , 0.0f ) ,
-															   D3DXVECTOR3( LIFE001_SIZE_X , LIFE001_SIZE_Y , 0.0f ) ,
-															   D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
-															   nNumber ) );
+															  D3DXVECTOR3( LIFE001_SIZE_X , LIFE001_SIZE_Y , 0.0f ) ,
+															  D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
+															  nNumber ) );
 		}
 
 		else if( m_type == Life::TYPE_LIFE002 )
 		{
 			//  数字クラスの生成
 			m_pNumber.push_back( Number::Create( D3DXVECTOR3( LIFE002_POS_X + LIFE002_SIZE_X * nCntDigit , LIFE002_POS_Y , 0.0f ) ,
-															   D3DXVECTOR3( LIFE002_SIZE_X , LIFE002_SIZE_Y , 0.0f ) ,
-															   D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
-															   nNumber ) );
+															  D3DXVECTOR3( LIFE002_SIZE_X , LIFE002_SIZE_Y , 0.0f ) ,
+															  D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
+															  nNumber ) );
 		}
 		else if( m_type == Life::TYPE_LIFE003 )
 		{
 			//  数字クラスの生成
 			m_pNumber.push_back( Number::Create( D3DXVECTOR3( LIFE003_POS_X + LIFE003_SIZE_X * nCntDigit , LIFE003_POS_Y , 0.0f ) ,
-															   D3DXVECTOR3( LIFE003_SIZE_X , LIFE003_SIZE_Y , 0.0f ) ,
-															   D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
-															   nNumber ) );
+															  D3DXVECTOR3( LIFE003_SIZE_X , LIFE003_SIZE_Y , 0.0f ) ,
+															  D3DXVECTOR2( 0.0f , 0.0f ) , D3DXVECTOR2( 5.0f , 2.0f ) , 
+															  nNumber ) );
 		}
 	}
 
@@ -276,7 +276,8 @@ void Life::Draw( void )
 //--------------------------------------------------------------------------------------
 //  インスタンス生成をする関数
 //--------------------------------------------------------------------------------------
-Life* Life::Create( TYPE type , D3DXVECTOR3 position , D3DXVECTOR3 size , D3DXVECTOR2 posUV , D3DXVECTOR2 divideUV , int nBaseLife )
+Life* Life::Create( TYPE type , D3DXVECTOR3 position , D3DXVECTOR3 size , D3DXVECTOR2 posUV ,
+					D3DXVECTOR2 divideUV , D3DXCOLOR color , int nBaseLife )
 {
 	Life* pLife;
 
@@ -300,6 +301,9 @@ Life* Life::Create( TYPE type , D3DXVECTOR3 position , D3DXVECTOR3 size , D3DXVE
 
 	//  テクスチャUV分割数の代入
 	pLife->m_divideUV = divideUV;
+
+	//  色の代入
+	pLife->m_color = color;
 
 	//  基準体力値の代入
 	pLife->m_nBaseLife = nBaseLife;

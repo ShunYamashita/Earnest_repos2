@@ -171,7 +171,7 @@ void Bullet::Update( void )
 					if( Utility::HitSphere( m_hitSphere , pEnemy->GetHitSphere( ) ) )
 					{
 						//  敵にダメージ処理
-						pEnemy->Damage( 400 );
+						pEnemy->Damage( m_vecDirect , 1.0f , 250 );
 
 						//  自身の削除
 						Scene::Release( );

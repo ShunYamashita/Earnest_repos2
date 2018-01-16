@@ -36,6 +36,7 @@
 #include "depthShadow.h"
 #include "cascadeShadow.h"
 #include "debugManager.h"
+#include "AIManager.h"
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
@@ -139,6 +140,12 @@ HRESULT SceneManager::Init( HINSTANCE hInstance , HWND hWnd, bool bWindow )
 	//  カスケードシャドウの初期化
 	CascadeShadow::Init( );
 
+	//  デバッグ管理クラスの初期化
+	DebugManager::Init( );
+
+	//  AI管理クラスの初期化
+	AIManager::Init( );
+
 	//  キーボードクラスポインタが空の場合
 	if( m_pKeyboard == NULL )
 	{
@@ -212,9 +219,6 @@ HRESULT SceneManager::Init( HINSTANCE hInstance , HWND hWnd, bool bWindow )
 		m_pFade = Fade::Create( );
 	}
 
-	//  デバッグ管理クラスの初期化
-	DebugManager::Init( );
-
 	//  モードの設定
 	SetMode( m_mode );
 
@@ -270,58 +274,6 @@ HRESULT SceneManager::Init( HINSTANCE hInstance , HWND hWnd, bool bWindow )
 
 		//  頂点バッファのアンロック
 		m_vertexBuffer->Unlock( );
-	}
-
-	m_shadowMap = nullptr;
-
-	//  頂点バッファの作成
-	if( FAILED( device->CreateVertexBuffer( sizeof( VERTEX_2D ) * NUM_VERTEX ,		//  作成したい頂点バッファのサイズ
-										    D3DUSAGE_WRITEONLY ,					//  使用方法
-										    0 ,										//  
-										    D3DPOOL_MANAGED ,						//  メモリ管理方法( MANAGED → お任せ )
-										    &m_shadowMap ,							//  バッファ
-										    NULL ) ) )
-	{
-		MessageBox( NULL , "頂点バッファインターフェースを正しく取得出来ませんでした。" , "エラーメッセージ" , MB_OK );
-
-		return E_FAIL;
-	}
-
-	pVtx = NULL;				//  頂点バッファのポインタ
-
-	if( m_shadowMap != NULL )
-	{
-		//  頂点バッファをロックして、仮想アドレスを取得する
-		m_shadowMap->Lock( 0 , 0 ,									//  取る先頭と、サイズ( 0 , 0 で全部 )
-						   ( void** )&pVtx ,						//  アドレスが書かれたメモ帳のアドレス
-						   0 );										//  ロックの種類
-
-		//  頂点座標の設定( 3D座標 ・ 右回り )
-		pVtx[ 0 ].position = D3DXVECTOR3( SCREEN_WIDTH * 0.84f , SCREEN_HEIGHT * 0.01f , 0.0f );
-		pVtx[ 1 ].position = D3DXVECTOR3( SCREEN_WIDTH * 0.99f , SCREEN_HEIGHT * 0.01f , 0.0f );
-		pVtx[ 2 ].position = D3DXVECTOR3( SCREEN_WIDTH * 0.84f , SCREEN_HEIGHT * 0.16f , 0.0f );
-		pVtx[ 3 ].position = D3DXVECTOR3( SCREEN_WIDTH * 0.99f , SCREEN_HEIGHT * 0.16f , 0.0f );
-
-		//  法線の指定
-		pVtx[ 0 ].rhw = 1.0f;
-		pVtx[ 1 ].rhw = 1.0f;
-		pVtx[ 2 ].rhw = 1.0f;
-		pVtx[ 3 ].rhw = 1.0f;
-
-		//  頂点色の設定( 0 ～ 255 の整数値 )
-		pVtx[ 0 ].color = D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f );
-		pVtx[ 1 ].color = D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f );
-		pVtx[ 2 ].color = D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f );
-		pVtx[ 3 ].color = D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f );
-
-		//  UV座標の指定
-		pVtx[ 0 ].texcoord = D3DXVECTOR2( 0.0f , 0.0f );
-		pVtx[ 1 ].texcoord = D3DXVECTOR2( 1.0f , 0.0f );
-		pVtx[ 2 ].texcoord = D3DXVECTOR2( 0.0f , 1.0f );
-		pVtx[ 3 ].texcoord = D3DXVECTOR2( 1.0f , 1.0f );
-
-		//  頂点バッファのアンロック
-		m_shadowMap->Unlock( );
 	}
 
 	return S_OK;
@@ -422,6 +374,9 @@ void SceneManager::Uninit( void )
 		delete m_pWwise;
 		m_pWwise = nullptr;
 	}
+
+	//  AI管理クラスの初期化
+	AIManager::Init( );
 }
 
 //--------------------------------------------------------------------------------------
@@ -458,6 +413,9 @@ void SceneManager::Update( void )
 	{
 		m_pMode->Update( );
 	}
+
+	//  AI管理クラスの更新
+	AIManager::Update( );
 
 	//  エフェクシアの更新
 	EffekseerManager::Update( );
@@ -624,38 +582,6 @@ void SceneManager::Draw( void )
 									0 ,									//  オフセット( 何番目の頂点から描画するか選べる )
 									NUM_POLYGON );						//  プリミティブ数
 
-//#ifdef _DEBUG
-
-			//if( m_mode == Mode::TEST )
-			{
-				// 頂点バッファをデータストリームに設定
-				pDevice->SetStreamSource( 0 ,								//  パイプライン番号
-										  m_shadowMap ,						//  頂点バッファのアドレス
-										  0 ,								//  オフセット( byte )
-										  sizeof( VERTEX_2D ) );			//  一個分の頂点データのサイズ( ストライド )
-
-				// 頂点フォーマットの設定
-				pDevice->SetFVF( FVF_VERTEX_2D );
-
-				if( DepthShadow::GetRendereTargetTexture( ) != nullptr )
-				{
-					// テクスチャの設定
-					pDevice->SetTexture( 0 , DepthShadow::GetRendereTargetTexture( ) ); 
-				}
-				else
-				{
-					// テクスチャの設定
-					pDevice->SetTexture( 0 , NULL );
-				}
-
-				// ポリゴンの描画
-				pDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP ,				//  プリミティブの種類
-										0 ,									//  オフセット( 何番目の頂点から描画するか選べる )
-										NUM_POLYGON );						//  プリミティブ数
-			}
-
-//#endif
-
 			//  フェードクラスポインタが空ではない場合
 			if( m_pFade != NULL )
 			{
@@ -663,15 +589,8 @@ void SceneManager::Draw( void )
 				m_pFade->Draw( );
 			}
 
-//#ifdef _DEBUG
-
-			//if( m_mode == Mode::TEST )
-			{
-				//  デバッグ管理クラスの描画
-				DebugManager::Draw( );
-			}
-
-//#endif
+			//  デバッグ管理クラスの終了
+			DebugManager::Draw( );
 
 			//  描画終了
 			m_pRenderer->DrawEndPresent( );
@@ -782,35 +701,6 @@ void SceneManager::Draw( void )
 			pDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP ,				//  プリミティブの種類
 									0 ,									//  オフセット( 何番目の頂点から描画するか選べる )
 									NUM_POLYGON );						//  プリミティブ数
-
-#ifdef _DEBUG
-
-			// 頂点バッファをデータストリームに設定
-			pDevice->SetStreamSource( 0 ,								//  パイプライン番号
-									  m_shadowMap ,						//  頂点バッファのアドレス
-									  0 ,								//  オフセット( byte )
-									  sizeof( VERTEX_2D ) );			//  一個分の頂点データのサイズ( ストライド )
-
-			// 頂点フォーマットの設定
-			pDevice->SetFVF( FVF_VERTEX_2D );
-
-			if( DepthShadow::GetRendereTargetTexture( ) != nullptr )
-			{
-				// テクスチャの設定
-				pDevice->SetTexture( 0 , DepthShadow::GetRendereTargetTexture( ) ); 
-			}
-			else
-			{
-				// テクスチャの設定
-				pDevice->SetTexture( 0 , NULL ); 
-			}
-
-			// ポリゴンの描画
-			pDevice->DrawPrimitive( D3DPT_TRIANGLESTRIP ,				//  プリミティブの種類
-									0 ,									//  オフセット( 何番目の頂点から描画するか選べる )
-									NUM_POLYGON );						//  プリミティブ数
-
-#endif
 
 			//  フェードクラスポインタが空ではない場合
 			if( m_pFade != NULL )

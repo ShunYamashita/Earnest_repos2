@@ -46,18 +46,26 @@ public:
 	Utility( ){ };								//  コンストラクタ
 	~Utility( ){ };								//  デストラクタ
 
+	//  角度計算系
 	static float		RadianOf2Vector( D3DXVECTOR3 &vec1 , D3DXVECTOR3 &vec2 );
 	static float		AngleOf2Vector( D3DXVECTOR3 &vec1 , D3DXVECTOR3 &vec2 );
+
+	//  当たり判定系
 	static bool			HitCirclePoint( HIT_CIRCLE &circle , D3DXVECTOR2 &position );
 	static bool			HitSphere( HIT_SPHERE &sph1 , HIT_SPHERE &sph2 , float* pDist = NULL );
 	static bool			HitSpherePoint( HIT_SPHERE &sph1 , D3DXVECTOR3 position );
-	static bool			IntoView( D3DXVECTOR3 vec1 , D3DXVECTOR3 vec2 , float fViewAngle );
-	static void			SetupVertexFog( DWORD color , DWORD mode , BOOL useRange , float fStart , float fEnd , float fDensity );
-	static D3DXMATRIX*	GetFixedLookAtMatrix( D3DXMATRIX* pMtx ,
-											  D3DXVECTOR3* pPos ,
-											  D3DXVECTOR3* pPosAt ,
-											  D3DXVECTOR3* pVecUp );
 
+	//  視界検査
+	static bool			IntoView( D3DXVECTOR3 vec1 , D3DXVECTOR3 vec2 , float fViewAngle );
+
+	//  フォグ設定
+	static void			SetupVertexFog( DWORD color , DWORD mode , BOOL useRange , float fStart , float fEnd , float fDensity );
+
+	//  姿勢行列作成系
+	static D3DXMATRIX*	GetLookAtMatrix( D3DXMATRIX* pMtx , D3DXVECTOR3* pPos , D3DXVECTOR3* pPosAt , D3DXVECTOR3* pVecUp );
+	static D3DXMATRIX*	GetFixedLookAtMatrix( D3DXMATRIX* pMtx , D3DXVECTOR3* pPos , D3DXVECTOR3* pPosAt , D3DXVECTOR3* pVecUp );
+
+	//  ベジェ曲線からベクトルを求める
 	static D3DXVECTOR2	BezierCurve2D( D3DXVECTOR2 p1 , D3DXVECTOR2 p2 , D3DXVECTOR2 controllPoint , float fTime );
 
 private:

@@ -24,6 +24,10 @@
 #include "sceneFBX.h"
 #include "unityFBX.h"
 #include "light.h"
+#include "block.h"
+#include "cascadeShadow.h"
+#include "playerWinks.h"
+#include <random>
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
@@ -35,6 +39,8 @@
 
 static const float	ATMOSPHERE_SIZE = 15.0f; 
 static const int	ATMOSPHERE_NUM = 1;
+
+static const int	TREE_NUM = 30;
 
 //--------------------------------------------------------------------------------------
 //  インスタンス生成
@@ -92,7 +98,19 @@ void Test::Init( void )
 
 	//  FBXの生成
 	ObjectFBX::Create( D3DXVECTOR3( 0.0f , 0.0f , 100.0f ) , 0.05f );
-	//UnityFBX::Create( D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) , 0.05f );
+	UnityFBX::Create( D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) , 0.05f );
+
+	//  乱数の宣言
+	std::random_device rd;
+
+	//  乱数の設定
+	std::uniform_int_distribution< int > RandomPosition( -400 , 400 );
+
+	for( int i = 0; i < TREE_NUM; i++ )
+	{
+		Block::Create( D3DXVECTOR3( ( float )RandomPosition( rd ) , 0.0f , ( float )RandomPosition( rd ) ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+					   D3DXVECTOR3( 0.1f , 0.1f , 0.1f ) ); 
+	}
 
 	for( int i = 0; i < ATMOSPHERE_NUM; i++ )
 	{
@@ -257,6 +275,10 @@ void Test::Update( void )
 			Fade::SetFade( Fade::FADE_OUT , Mode::MODE::STAGE_SELECT , D3DXCOLOR( 0.0f , 0.0f , 0.0f , 0.0f ) , 0.02f );
 		}
 	}
+
+	//  カスケードシャドウ情報の設定
+	CascadeShadow::SetCascadeShadowInfo( D3DXVECTOR3( -500.0f , 0.0f , -500.0f ) ,
+										 D3DXVECTOR3( 500.0f , 0.0f , 500.0f ) );
 
 	Camera* camera = SceneManager::GetCamera( 0 );
 

@@ -148,10 +148,9 @@ private:
 	D3DXVECTOR3										m_positionAt;					//  注視点
 	D3DXVECTOR3										m_vectorDirect;					//  進行方向ベクトル
 
-	FbxTime											m_startTime;
-	FbxTime											m_endTime;
-	int												m_currentFrame;
-	int												m_allTime;
+	int												m_currentFrame;					//  現在のフレーム  
+	int												m_allTime;						//  全体のフレーム
+	int												m_animationIndex;				//  アニメーション番号
 	float											m_scale;
 	bool											m_makeVertrx;
 	std::vector< std::string >						m_textures;						//  マテリアル     

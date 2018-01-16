@@ -124,64 +124,64 @@ void MeshField::Update( void )
 //--------------------------------------------------------------------------------------
 void MeshField::ChangeHeight( void )
 {
-	// キーボード情報の取得
-	Keyboard* pKeyboard = SceneManager::GetKeyboard( );
+	//// キーボード情報の取得
+	//Keyboard* pKeyboard = SceneManager::GetKeyboard( );
 
-	//  Aキーが押された場合
-	if( pKeyboard->GetKeyboardTrigger( DIK_J ) )
-	{
-		m_nFocusSide--;
+	////  Aキーが押された場合
+	//if( pKeyboard->GetKeyboardTrigger( DIK_J ) )
+	//{
+	//	m_nFocusSide--;
 
-		if( m_nFocusSide < 0 )
-		{
-			m_nFocusSide = m_nDivideSide;
-		}
-	}
+	//	if( m_nFocusSide < 0 )
+	//	{
+	//		m_nFocusSide = m_nDivideSide;
+	//	}
+	//}
 
-	//  Dキーが押された場合
-	if( pKeyboard->GetKeyboardTrigger( DIK_L ) )
-	{
-		m_nFocusSide++;
+	////  Dキーが押された場合
+	//if( pKeyboard->GetKeyboardTrigger( DIK_L ) )
+	//{
+	//	m_nFocusSide++;
 
-		if( m_nFocusSide > m_nDivideSide )
-		{
-			m_nFocusSide = 0;
-		}
-	}
+	//	if( m_nFocusSide > m_nDivideSide )
+	//	{
+	//		m_nFocusSide = 0;
+	//	}
+	//}
 
-	//  Aキーが押された場合
-	if( pKeyboard->GetKeyboardTrigger( DIK_I ) )
-	{
-		m_nFocusVertical--;
+	////  Aキーが押された場合
+	//if( pKeyboard->GetKeyboardTrigger( DIK_I ) )
+	//{
+	//	m_nFocusVertical--;
 
-		if( m_nFocusVertical < 0 )
-		{
-			m_nFocusVertical = m_nDivideVertical;
-		}
-	}
+	//	if( m_nFocusVertical < 0 )
+	//	{
+	//		m_nFocusVertical = m_nDivideVertical;
+	//	}
+	//}
 
-	//  Dキーが押された場合
-	if( pKeyboard->GetKeyboardTrigger( DIK_K ) )
-	{
-		m_nFocusVertical++;
+	////  Dキーが押された場合
+	//if( pKeyboard->GetKeyboardTrigger( DIK_K ) )
+	//{
+	//	m_nFocusVertical++;
 
-		if( m_nFocusVertical > m_nDivideVertical )
-		{
-			m_nFocusVertical = 0;
-		}
-	}
+	//	if( m_nFocusVertical > m_nDivideVertical )
+	//	{
+	//		m_nFocusVertical = 0;
+	//	}
+	//}
 
-	//  ↑キーが押された場合
-	if( pKeyboard->GetKeyboardPress( DIK_UPARROW ) )
-	{
-		m_fieldPos[ m_nFocusVertical ][ m_nFocusSide ].y += 1.0f;
-	}
+	////  ↑キーが押された場合
+	//if( pKeyboard->GetKeyboardPress( DIK_UPARROW ) )
+	//{
+	//	m_fieldPos[ m_nFocusVertical ][ m_nFocusSide ].y += 1.0f;
+	//}
 
-	//  ↓キーが押された場合
-	if( pKeyboard->GetKeyboardPress( DIK_DOWNARROW ) )
-	{
-		m_fieldPos[ m_nFocusVertical ][ m_nFocusSide ].y -= 1.0f;
-	}
+	////  ↓キーが押された場合
+	//if( pKeyboard->GetKeyboardPress( DIK_DOWNARROW ) )
+	//{
+	//	m_fieldPos[ m_nFocusVertical ][ m_nFocusSide ].y -= 1.0f;
+	//}
 }
 
 //--------------------------------------------------------------------------------------
@@ -271,10 +271,12 @@ void MeshField::Draw( void )
 	//  バイアス値の取得
 	float bias = DepthShadow::GetBias( );
 
+	//  ファー値の取得
+	float farValue = SceneManager::GetLight( )->GetFar( );
+
 	//  シェーダーに必要な情報の設定
-	//shader3D->SetShaderInfo( mtxWorld , viewMatrix , projectionMatrix , lightDirectLocal , lightDiffuseColor );
 	shader3DDepthShadow->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix ,
-										lightDirectLocal , lightViewProjectionMatrix , tmpOffset , bias );
+										lightDirectLocal , lightViewProjectionMatrix , tmpOffset , bias , farValue );
 
 	UINT textureSampler = shader3DDepthShadow->GetSamplerTextureIndex( );
 	UINT shadowSampler = shader3DDepthShadow->GetSamplerShadowIndex( );

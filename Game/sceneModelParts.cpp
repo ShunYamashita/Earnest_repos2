@@ -322,6 +322,9 @@ void SceneModelParts::Draw( D3DXVECTOR3 position , D3DXVECTOR3 posAt , D3DXCOLOR
 	//  バイアス値の取得
 	float bias = DepthShadow::GetBias( );
 
+	//  ファー値の取得
+	float farValue = SceneManager::GetLight( )->GetFar( );
+
 	//  シェーダー情報の取得
 	Shader3DThun* shader3DThun = ( Shader3DThun* )ShaderManager::GetShader( ShaderManager::TYPE::SHADER_3D_THUN );
 
@@ -352,24 +355,10 @@ void SceneModelParts::Draw( D3DXVECTOR3 position , D3DXVECTOR3 posAt , D3DXCOLOR
 		{
 			pDevice->SetTexture( 0 , pTexture->GetTextureImage( m_aTextureName[ nCntMaterial ] ) );
 
-			////  シェーダーに必要な情報の設定
-			//shader3D->SetShaderInfo( mtxWorld , lightDirectLocal );
-
-			////  シェーダー3Dの描画開始
-			//shader3D->DrawBegin( );
-
-			////  シェーダーに必要な情報の設定
-			//shader3DRimLightTexture->SetShaderInfo( mtxWorld , viewMatrix , projectionMatrix ,
-			//										worldInverseTransposeMatrix , cameraPositionEye , lightDirectWorld , 
-			//										specularPower , D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f ) );
 			shader3DDepthShadow->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix ,
-												lightDirectLocal , lightViewProjectionMatrix , tmpOffset , bias );
-			//shader3DThun->SetShaderInfo( mtxWorld , viewMatrix , projectionMatrix , lightDirectLocal );
+												lightDirectLocal , lightViewProjectionMatrix , tmpOffset , bias , farValue );
 
-			//  シェーダー3Dの描画開始
-			//shader3DRimLightTexture->DrawBegin( );
 			shader3DDepthShadow->DrawBegin( );
-			//shader3DThun->DrawBegin( );
 		}
 
 		//  メッシュの描画

@@ -9,10 +9,9 @@
 //--------------------------------------------------------------------------------------
 //  ヘッダーファイル
 //--------------------------------------------------------------------------------------
-
-//--------------------------------------------------------------------------------------
-//  マクロ定義
-//--------------------------------------------------------------------------------------
+#include <string>
+#include <list>
+#include "characterAI.h"
 
 //--------------------------------------------------------------------------------------
 //  前方宣言
@@ -25,20 +24,51 @@ class LayerAI;
 class NodeAI
 {
 public:
-	NodeAI( ) : m_active( false ){ }												//  コンストラクタ
-	NodeAI( LayerAI* parentLayerAI ) : m_parentLayerAI( parentLayerAI ) ,			//  引数付きコンストラクタ
-									   m_active( false ){ }																					
+	enum class STATE			//  状態
+	{
+		INACTIVE = 0 ,			//  非アクティブ
+		SUCCESS ,				//  成功
+		FAILURE ,				//  失敗
+		RUNNING ,				//  実行中
+		COMPLETED ,				//  完了
+	};
 
-	virtual void	Release( void ) = 0;											//  解放
-	virtual void	Run( void ) = 0;												//  実行
-	virtual void	JudgeActive( void ) = 0;										//  実行可能かの判断をする
-	virtual void	EnableActive( void ){ m_active = true; }						//  実行可能状態に
-	virtual void	DisableActive( void ){ m_active = false; }						//  実行不可能状態に
+	NodeAI( ) : m_active( true ){ }											//  コンストラクタ
+	NodeAI( CharacterAI::NODE_TYPE type ,									//  引数付きコンストラクタ
+			std::string name ,												
+			CharacterAI* characterAI ,
+			LayerAI* parentLayer ) :
+			m_type( type ) ,
+			m_name( name ) ,
+			m_characterAI( characterAI ) ,
+			m_parentLayer( parentLayer ) ,			
+			m_active( true ) ,
+			m_state( STATE::INACTIVE ){ }																		
+
+	virtual void			Release( void );								//  解放
+	virtual void			Run( void ) = 0;								//  実行
+	virtual void			JudgeActive( void );							//  実行可能かの判断をする
+	virtual void			EnableActive( void ){ m_active = true; }		//  実行可能状態に
+	virtual void			DisableActive( void ){ m_active = false; }		//  実行不可能状態に
+	virtual void			DrawDebug( void ) = 0;							//  デバッグ描画
+	virtual void			AddChildLayer( CharacterAI::LAYER_TYPE type ,	//  レイヤーの追加
+										   std::string name ,				
+										   CharacterAI* characterAI ,
+										   NodeAI* parentNode );
+	virtual void			DeleteChildLayer( void );						//  子レイヤーの削除
+	virtual bool			GetActive( void ){ return m_active; }			//  実行状態の取得
+	virtual STATE			GetState( void ){ return m_state; }				//  状態の取得
+	virtual std::string		GetName( void ){ return m_name; }				//  名前の取得
 
 protected:
-	LayerAI*		m_parentLayerAI;												//  親レイヤー
-	LayerAI*		m_childLayerAI;													//  子レイヤー
-	bool			m_active;														//  アクティブかどうかのフラグ
+	std::string				m_name;											//  ノード名
+	LayerAI*				m_parentLayer;									//  親レイヤー
+	LayerAI*				m_childLayer;									//  子レイヤー
+	CharacterAI*			m_characterAI;									//  キャラクターAI
+	STATE					m_state;										//  状態
+	CharacterAI::NODE_TYPE	m_type;											//  種類
+	bool					m_active;										//  アクティブかのフラグ
+	char					m_addLayerName[ 32 ];							//  追加レイヤー名
 };
 
 #endif

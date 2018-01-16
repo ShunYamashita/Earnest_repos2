@@ -96,7 +96,6 @@ private:
 	static	int					m_nLoop;								//  ループ数
 
 	LPDIRECT3DVERTEXBUFFER9		m_vertexBuffer;							//  頂点バッファ
-	LPDIRECT3DVERTEXBUFFER9		m_shadowMap;							//  頂点バッファ
 };
 
 #endif

@@ -492,40 +492,11 @@ void SceneModel::Draw( void )
 	//  バイアス値の取得
 	float bias = DepthShadow::GetBias( );
 
-	//  シェーダーに必要な情報の設定
-	//shader3D->SetShaderInfo( mtxWorld , viewMatrix , projectionMatrix , lightDirectLocal , lightDiffuseColor );
+	//  ファー値の取得
+	float farValue = SceneManager::GetLight( )->GetFar( );
 
 	UINT textureSampler = shader3DDepthShadow->GetSamplerTextureIndex( );
 	UINT shadowSampler = shader3DDepthShadow->GetSamplerShadowIndex( );
-
-	//if( m_type == SceneModel::TYPE_TREE || 
-	//	m_type == SceneModel::TYPE_FIELD000 )
-	//{
-	//	//  シェーダー情報の取得
-	//	Shader3DOutline* shader3DOutline = ( Shader3DOutline* )ShaderManager::GetShader( ShaderManager::TYPE::SHADER_3D_OUTLINE );
-
-	//	//  レンダーステートの設定
-	//	pDevice->SetRenderState( D3DRS_CULLMODE , D3DCULL_CW );				//  裏面描画
-
-	//	//  マテリアルの数分のループ
-	//	for( int nCntMaterial = 0; nCntMaterial < ( int )m_nNumMatModel; nCntMaterial++ )
-	//	{
-	//		//  シェーダーに必要な情報の設定
-	//		shader3DOutline->SetShaderInfo( mtxWorld , viewMatrix , projectionMatrix );
-
-	//		//  シェーダー描画開始
-	//		shader3DOutline->DrawBegin( );
-
-	//		//  メッシュの描画
-	//		m_pMeshModel->DrawSubset( nCntMaterial );
-
-	//		//  シェーダー3Dの描画終了
-	//		ShaderManager::DrawEnd( );
-	//	}
-
-	//	//  レンダーステートの設定
-	//	pDevice->SetRenderState( D3DRS_CULLMODE , D3DCULL_CCW );			//  表面描画
-	//}
 
 	//  マテリアルの数分のループ
 	for( int nCntMaterial = 0; nCntMaterial < ( int )m_nNumMatModel; nCntMaterial++ )
@@ -556,11 +527,9 @@ void SceneModel::Draw( void )
 
 			//  シェーダーに必要な情報の設定
 			shader3DDepthShadow->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix ,
-												lightDirectLocal , lightViewProjectionMatrix , tmpOffset , bias );
-			//shader3D->SetShaderInfo( mtxWorld , viewMatrix ,projectionMatrix , lightDirectLocal , lightDiffuseColor );
+												lightDirectLocal , lightViewProjectionMatrix , tmpOffset , bias , farValue );
 
-			////  シェーダー3Dの描画開始
-			//shader3D->DrawBegin( );
+			//  シェーダー3Dの描画開始
 			shader3DDepthShadow->DrawBegin( );
 		}
 

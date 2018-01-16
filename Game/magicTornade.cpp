@@ -170,11 +170,16 @@ void MagicTornade::Update( void )
 							hitCircle.position.y = m_magicPos.z;
 							hitCircle.fLength = m_size.x * m_fScale * 4.0f;
 
+							D3DXVECTOR3 blowVecDirect( 0.0f , 0.0f , 0.0f );
+							blowVecDirect.x = enemyPos.x - hitCircle.position.x;
+							blowVecDirect.z = enemyPos.y - hitCircle.position.y;
+							D3DXVec3Normalize( &blowVecDirect , &blowVecDirect );
+
 							//  弾と敵が当たった場合
 							if( Utility::HitCirclePoint( hitCircle , enemyPos ) )
 							{
 								//  敵にダメージ処理
-								pEnemy->Damage( ( int )( 90 * m_fScale ) );
+								pEnemy->Damage( blowVecDirect , TORNADE_BLOW_POWER , ( int )( 90 * m_fScale ) );
 							}
 						}
 					}

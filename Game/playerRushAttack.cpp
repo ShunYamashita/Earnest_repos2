@@ -146,7 +146,15 @@ void PlayerRushAttack::Action( void )
 
 						if( Utility::HitSphere( attackHitSphere , pEnemy->GetHitSphere( ) ) )
 						{
-							pEnemy->Damage( PLAYER_RUSH_ATTACK_DAMAGE );
+							//  吹っ飛び方向のベクトル算出
+							D3DXVECTOR3 blowVecDirect = GetPlayer( )->GetVecDirect( );
+							D3DXMATRIX mtxRot;
+							D3DXMatrixIdentity( &mtxRot );
+							D3DXMatrixRotationY( &mtxRot , D3DX_PI * 0.1f );
+							D3DXVec3TransformNormal( &blowVecDirect , &blowVecDirect , &mtxRot );
+							D3DXVec3Normalize( &blowVecDirect , &blowVecDirect );
+
+							pEnemy->Damage( blowVecDirect , PLAYER_RUSH_ATTACK_BLOW_POWER , PLAYER_RUSH_ATTACK_DAMAGE );
 						}
 					}
 				}

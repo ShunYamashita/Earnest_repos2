@@ -195,7 +195,7 @@ void MagicFire::Update( void )
 							if( Utility::HitSphere( m_hitSphere , pEnemy->GetHitSphere( ) ) )
 							{
 								//  敵にダメージ処理
-								pEnemy->Damage( ( int )( 75 * m_fScale ) );
+								pEnemy->Damage( m_vecDirect , FIRE_BLOW_POWER , ( int )( 75 * m_fScale ) );
 
 								//  自身の削除
 								Scene::Release( );

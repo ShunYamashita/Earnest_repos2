@@ -211,23 +211,18 @@ HRESULT Player::Init( void )
 	//  物体の種類の設定
 	Scene::SetObjType( Scene::OBJTYPE_PLAYER );
 
-	////  ステンシルシャドウの生成
-	//m_stencilShadow = StencilShadow::Create( StencilShadow::TYPE::SPHERE ,
-	//										 m_position , 
-	//										 D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
-	//										 D3DXVECTOR3( PLAYER_SHADOW_SCALE , PLAYER_SHADOW_SCALE , PLAYER_SHADOW_SCALE ) );
-
 	if( m_nPlayerNo == 0 )
 	{
 		if( Game::GetModeVS( ) == Game::MODE_VS_CPU )
 		{
 			//  体力の生成
 			m_pLife = Life::Create( Life::TYPE_LIFE000 ,
-									 D3DXVECTOR3( PLAYER_LIFE_POS_X , PLAYER_LIFE_POS_Y , 0.0f ) ,
-									 D3DXVECTOR3( PLAYER_LIFE_SIZE_X , PLAYER_LIFE_SIZE_Y , 0.0f ) ,
-									 D3DXVECTOR2( 0.0f , 0.0f ) ,
-									 D3DXVECTOR2( 1.0f , 1.0f ) ,
-									 m_nLife );
+									D3DXVECTOR3( PLAYER_LIFE_POS_X , PLAYER_LIFE_POS_Y , 0.0f ) ,
+									D3DXVECTOR3( PLAYER_LIFE_SIZE_X , PLAYER_LIFE_SIZE_Y , 0.0f ) ,
+									D3DXVECTOR2( 0.0f , 0.0f ) ,
+									D3DXVECTOR2( 1.0f , 1.0f ) ,
+									D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f ) ,
+									m_nLife );
 			////  ブレイブの生成
 			//m_pBrave = Brave::Create( D3DXVECTOR3( PLAYER_BRAVE_POS_X , PLAYER_BRAVE_POS_Y , 0.0f ) ,
 			//						   D3DXVECTOR3( PLAYER_BRAVE_SIZE_X , PLAYER_BRAVE_SIZE_Y , 0.0f ) ,
@@ -237,16 +232,17 @@ HRESULT Player::Init( void )
 		{
 			//  プレイヤーUIの生成
 			m_pPlayerUI = PlayerUI::Create( PlayerUI::TYPE_PLAYER1 ,
-											 D3DXVECTOR3( PLAYER_UI_POS_X , PLAYER_UI_POS_Y , 0.0f ) ,
-											 D3DXVECTOR3( PLAYER_UI_SIZE_X , PLAYER_UI_SIZE_Y , 0.0f ) );
+											D3DXVECTOR3( PLAYER_UI_POS_X , PLAYER_UI_POS_Y , 0.0f ) ,
+											D3DXVECTOR3( PLAYER_UI_SIZE_X , PLAYER_UI_SIZE_Y , 0.0f ) );
 
 			//  体力の生成
 			m_pLife = Life::Create( Life::TYPE_LIFE002 ,
-									 D3DXVECTOR3( PLAYER_VS_LIFE_POS_X , PLAYER_VS_LIFE_POS_Y , 0.0f ) ,
-									 D3DXVECTOR3( PLAYER_VS_LIFE_SIZE_X , PLAYER_VS_LIFE_SIZE_Y , 0.0f ) ,
-									 D3DXVECTOR2( 0.0f , 0.0f ) ,
-									 D3DXVECTOR2( 1.0f , 1.0f ) ,
-									 m_nLife );
+									D3DXVECTOR3( PLAYER_VS_LIFE_POS_X , PLAYER_VS_LIFE_POS_Y , 0.0f ) ,
+									D3DXVECTOR3( PLAYER_VS_LIFE_SIZE_X , PLAYER_VS_LIFE_SIZE_Y , 0.0f ) ,
+									D3DXVECTOR2( 0.0f , 0.0f ) ,
+									D3DXVECTOR2( 1.0f , 1.0f ) ,
+									D3DXCOLOR( 0.1f , 0.9f , 1.0f , 1.0f ) ,
+									m_nLife );
 
 			////  ブレイブの生成
 			//m_pBrave = Brave::Create( D3DXVECTOR3( PLAYER_BRAVE_POS_X , PLAYER_BRAVE_POS_Y , 0.0f ) ,
@@ -262,11 +258,12 @@ HRESULT Player::Init( void )
 		if( Game::GetModeVS( ) == Game::MODE_VS_CPU )
 		{
 			m_pLife = Life::Create( Life::TYPE_LIFE001 ,
-									 D3DXVECTOR3( PLAYER2_LIFE_POS_X , PLAYER2_LIFE_POS_Y , 0.0f ) ,
-									 D3DXVECTOR3( PLAYER2_LIFE_SIZE_X , PLAYER2_LIFE_SIZE_Y , 0.0f ) ,
-									 D3DXVECTOR2( 0.0f , 0.0f ) ,
-									 D3DXVECTOR2( 1.0f , 1.0f ) ,
-									 m_nLife );
+									D3DXVECTOR3( PLAYER2_LIFE_POS_X , PLAYER2_LIFE_POS_Y , 0.0f ) ,
+									D3DXVECTOR3( PLAYER2_LIFE_SIZE_X , PLAYER2_LIFE_SIZE_Y , 0.0f ) ,
+									D3DXVECTOR2( 0.0f , 0.0f ) ,
+									D3DXVECTOR2( 1.0f , 1.0f ) ,
+									D3DXCOLOR( 1.0f , 1.0f , 1.0f , 1.0f ) ,
+									m_nLife );
 
 			////  ブレイブの生成
 			//m_pBrave = Brave::Create( D3DXVECTOR3( PLAYER2_BRAVE_POS_X , PLAYER2_BRAVE_POS_Y , 0.0f ) ,
@@ -277,15 +274,16 @@ HRESULT Player::Init( void )
 		{
 			//  プレイヤーUIの生成
 			m_pPlayerUI = PlayerUI::Create( PlayerUI::TYPE_PLAYER2 ,
-											 D3DXVECTOR3( PLAYER2_UI_POS_X , PLAYER2_UI_POS_Y , 0.0f ) ,
-											 D3DXVECTOR3( PLAYER2_UI_SIZE_X , PLAYER2_UI_SIZE_Y , 0.0f ) );
+											D3DXVECTOR3( PLAYER2_UI_POS_X , PLAYER2_UI_POS_Y , 0.0f ) ,
+											D3DXVECTOR3( PLAYER2_UI_SIZE_X , PLAYER2_UI_SIZE_Y , 0.0f ) );
 
 			m_pLife = Life::Create( Life::TYPE_LIFE003 ,
-									 D3DXVECTOR3( PLAYER2_VS_LIFE_POS_X , PLAYER2_VS_LIFE_POS_Y , 0.0f ) ,
-									 D3DXVECTOR3( PLAYER2_VS_LIFE_SIZE_X , PLAYER2_VS_LIFE_SIZE_Y , 0.0f ) ,
-									 D3DXVECTOR2( 0.0f , 0.0f ) ,
-									 D3DXVECTOR2( 1.0f , 1.0f ) ,
-									 m_nLife );
+									D3DXVECTOR3( PLAYER2_VS_LIFE_POS_X , PLAYER2_VS_LIFE_POS_Y , 0.0f ) ,
+									D3DXVECTOR3( PLAYER2_VS_LIFE_SIZE_X , PLAYER2_VS_LIFE_SIZE_Y , 0.0f ) ,
+									D3DXVECTOR2( 0.0f , 0.0f ) ,
+									D3DXVECTOR2( 1.0f , 1.0f ) ,
+									D3DXCOLOR( 0.1f , 0.9f , 1.0f , 1.0f ) ,
+									m_nLife );
 
 			////  ブレイブの生成
 			//m_pBrave = Brave::Create( D3DXVECTOR3( PLAYER2_BRAVE_POS_X , PLAYER2_BRAVE_POS_Y , 0.0f ) ,

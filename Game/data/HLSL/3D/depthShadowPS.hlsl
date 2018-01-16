@@ -2,6 +2,7 @@ sampler		samplerTexture;
 sampler		samplerShadow;
 float4		offset;
 float		bias;
+float		far;
 
 struct IN_VERTEX
 {

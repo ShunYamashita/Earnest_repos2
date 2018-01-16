@@ -301,6 +301,20 @@ void Shader3DDepthShadow::SetBias( const float& bias )
 }
 
 //--------------------------------------------------------------------------------------
+//  ファー値の設定
+//--------------------------------------------------------------------------------------
+void Shader3DDepthShadow::SetFar( const float& farValue )
+{
+	//  デバイスの取得
+	LPDIRECT3DDEVICE9 device = SceneManager::GetRenderer( )->GetDevice( );
+
+	if( m_pixelShaderConstantTable != nullptr )
+	{
+		m_pixelShaderConstantTable->SetFloat( device ,  "far" , farValue );
+	}
+}
+
+//--------------------------------------------------------------------------------------
 //  シェーダー描画に必要な情報の設定
 //--------------------------------------------------------------------------------------
 void Shader3DDepthShadow::SetShaderInfo( const D3DXMATRIX &worldMatrix ,
@@ -309,7 +323,8 @@ void Shader3DDepthShadow::SetShaderInfo( const D3DXMATRIX &worldMatrix ,
 										 const D3DXVECTOR3 &lightDirectionLocal ,
 										 const D3DXMATRIX &lightViewProjectionMatrix ,
 										 const D3DXVECTOR4 &offset ,
-										 const float& bias )
+										 const float& bias ,
+										 const float& farValue )
 {
 	SetWorldMatrix( worldMatrix );
 	SetViewMatrix( viewMatrix );
@@ -318,6 +333,7 @@ void Shader3DDepthShadow::SetShaderInfo( const D3DXMATRIX &worldMatrix ,
 	SetLightViewProjectionMatrix( lightViewProjectionMatrix );
 	SetOffset( offset );
 	SetBias( bias );
+	SetFar( farValue );
 }
 
 //--------------------------------------------------------------------------------------

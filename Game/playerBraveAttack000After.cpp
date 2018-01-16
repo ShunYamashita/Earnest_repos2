@@ -121,9 +121,26 @@ void PlayerBraveAttack000After::Action( void )
 					//  ダウンキャスト
 					Enemy* pEnemy = ( Enemy* )pScene;
 
+					//  敵プレイヤーの3D座標の代入
+					D3DXVECTOR3 enemyPos3D;
+					enemyPos3D = pEnemy->GetPos( );
+
+					D3DXVECTOR3 blowVecDirect = enemyPos3D - GetPlayer( )->GetPos( );
+					D3DXVec3Normalize( &blowVecDirect , &blowVecDirect );
+
 					if( Utility::HitSphere( attackHitSphere , pEnemy->GetHitSphere( ) ) )
 					{
-						pEnemy->Damage( PLAYER_BRAVE_DAMAGE );
+						//  相手が防御状態である場合
+						if( pEnemy->GetGuard( ) )
+						{
+							//  のけぞり状態に
+							GetPlayer( )->SetAnimation( StateAnimator::MOTION_BEND );
+							GetPlayer( )->ChangeState( GetPlayer( )->GetPlayerState( Player::STATE::BEND ) );
+						}
+						else
+						{
+							pEnemy->Damage( blowVecDirect , PLAYER_BRAVE_BLOW_POWER , PLAYER_BRAVE_DAMAGE , true );
+						}
 					}
 				}
 			}

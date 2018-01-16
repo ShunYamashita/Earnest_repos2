@@ -75,7 +75,7 @@ HRESULT SceneModelAnim::Init( void )
 
 	char aTextName[ TYPE_MAX ][ 256 ] = {
 											"data/MODEL/THIEF/motion.txt" ,
-											"data/MODEL/ROBOT/motion.txt" ,
+											"data/MODEL/THIEF/motion.txt" ,
 										};
 
 	D3DXMATRIX		mtxScale;						//  拡大行列

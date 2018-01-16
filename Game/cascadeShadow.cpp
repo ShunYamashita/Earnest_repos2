@@ -120,9 +120,9 @@ void CascadeShadow::Uninit( void )
 }
 
 //--------------------------------------------------------------------------------------
-//  カスケードシャドウの更新処理
+//  カスケードシャドウ情報の設定
 //--------------------------------------------------------------------------------------
-void CascadeShadow::Update( void )
+void CascadeShadow::SetCascadeShadowInfo( const D3DXVECTOR3& min , const D3DXVECTOR3& max )			
 {
 	//  カメラ座標の取得
 	D3DXVECTOR3 cameraPosition = SceneManager::GetCamera( )->GetCameraPosEye( );
@@ -132,8 +132,8 @@ void CascadeShadow::Update( void )
 
 	//  フィールドサイズのAABB作成
 	AABB aabb;
-	aabb.min = Game::GetFieldMin( );
-	aabb.min = Game::GetFieldMax( );
+	aabb.min = min;
+	aabb.max = max;
 
 	//  near/far格納場所
 	float nearValue = 1.0f;

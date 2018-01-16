@@ -15,6 +15,10 @@
 #include "scene.h"
 #include "player.h"
 #include "light.h"
+#include "AIManager.h"
+#include "characterAI.h"
+#include "rootNodeAI.h"
+#include "texture.h"
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
@@ -65,8 +69,9 @@ void DebugManager::Update( void )
 {
 	ImGui_ImplDX9_NewFrame( );
 
-    bool show_test_window = true;
-    bool show_another_window = false;
+    static bool show_test_window = true;
+	static bool show_AI_window = false;
+    static bool show_another_window = false;
     ImVec4 clear_col = ImColor(114, 144, 154);
 
     // 1. Show a simple window
@@ -74,6 +79,8 @@ void DebugManager::Update( void )
     {
 		ImGui::Begin( "Debug Window", &show_test_window );
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+
+		ImGui::Checkbox( "AI Manager On/Off" , &show_AI_window );
 
 		if( ImGui::TreeNode( "Object Manager" ) ) 
 		{
@@ -119,6 +126,11 @@ void DebugManager::Update( void )
 			ImGui::Text( "PLAYER : PositionAt( %.2f , %.2f , %.2f )" , positionAtPlayer.x , positionAtPlayer.y , positionAtPlayer.z );
 			ImGui::Text( "PLAYER : VecDirect( %.2f , %.2f , %.2f )" , vecDirectPlayer.x , vecDirectPlayer.y , vecDirectPlayer.z );
 
+			ImGui::TreePop( );
+		}
+
+		if( ImGui::TreeNode( "DepthShadow Manager" ) ) 
+		{
 			Light* light = SceneManager::GetLight( );
 
 			D3DXVECTOR3 lightPosition;
@@ -141,11 +153,20 @@ void DebugManager::Update( void )
 			ImGui::InputFloat( "Bias" , &bias , 0.0000001f );
 			DepthShadow::SetBias( bias );
 
+			ImGui::Image( ( void* )DepthShadow::GetRendereTargetTexture( ) , 
+						  ImVec2( 128 , 128 ) , ImVec2( 0 , 0 ) , ImVec2( 1 , 1 ) , ImVec4( 1 , 1 , 1 , 1 ) , ImVec4( 1 , 1 , 1 , 1 ) ); 
+
 			ImGui::TreePop( );
 		}
 
 		ImGui::End( );
     }
+
+	if( show_AI_window )
+	{
+		//  AI管理クラスのデバッグ描画
+		AIManager::DrawDebug( show_AI_window );
+	}
 }
 
 //--------------------------------------------------------------------------------------

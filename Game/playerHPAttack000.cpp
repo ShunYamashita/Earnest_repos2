@@ -139,7 +139,7 @@ void PlayerHPAttack000::Action( void )
 						//  ダウンキャスト
 						Enemy* pEnemy = ( Enemy* )pScene;
 
-						//  敵の座標の代入
+						//  敵プレイヤーの座標の代入
 						D3DXVECTOR2 enemyPos;
 						enemyPos.x  = pEnemy->GetPos( ).x;
 						enemyPos.y  = pEnemy->GetPos( ).z;
@@ -149,7 +149,7 @@ void PlayerHPAttack000::Action( void )
 						hitCircle.position.y = GetPlayer( )->GetPos( ).z;
 						hitCircle.fLength = PLAYER_HP_RANGE;
 
-						//  敵の3D座標の代入
+						//  敵プレイヤーの3D座標の代入
 						D3DXVECTOR3 enemyPos3D;
 						enemyPos3D = pEnemy->GetPos( );
 
@@ -160,7 +160,17 @@ void PlayerHPAttack000::Action( void )
 						{
 							if( GetPlayer( )->GetPos( ).y + PLAYER_HP_RANGE_HEIGHT >= pEnemy->GetPos( ).y )
 							{
-								pEnemy->Damage( PLAYER_HP_DAMAGE );
+								//  相手が防御状態である場合
+								if( pEnemy->GetGuard( ) )
+								{
+									//  のけぞり状態に
+									GetPlayer( )->SetAnimation( StateAnimator::MOTION_BEND );
+									GetPlayer( )->ChangeState( GetPlayer( )->GetPlayerState( Player::STATE::BEND ) );
+								}
+								else
+								{
+									pEnemy->Damage( blowVecDirect , PLAYER_HP_BLOW_POWER , PLAYER_HP_DAMAGE , true );
+								}
 							}
 						}
 					}

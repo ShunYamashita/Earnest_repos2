@@ -185,6 +185,56 @@ D3DXVECTOR2	Utility::BezierCurve2D( D3DXVECTOR2 p1 , D3DXVECTOR2 p2 , D3DXVECTOR
 //--------------------------------------------------------------------------------------
 //  外積によって求められる垂直ベクトルから行列を作る関数
 //--------------------------------------------------------------------------------------
+D3DXMATRIX* Utility::GetLookAtMatrix( D3DXMATRIX* pMtx , D3DXVECTOR3* pPos , D3DXVECTOR3* pPosAt , D3DXVECTOR3* pVecUp )
+{
+	//  ローカル変数の宣言
+	D3DXVECTOR3 X , Y , Z;
+
+	//  Z軸方向のベクトルを求める
+	Z = *pPosAt - *pPos;
+
+	//  Zを単位ベクトル化
+	D3DXVec3Normalize( &Z , &Z );
+
+	//  上方向ベクトルとZ軸ベクトルの外積よりX軸ベクトルを求める
+	D3DXVec3Cross( &X , D3DXVec3Normalize( &Y , pVecUp ) , &Z );
+
+	//  Xを単位ベクトル化
+	D3DXVec3Normalize( &X , &X );
+
+	//  Yを単位ベクトル化
+	D3DXVec3Normalize( &Y , D3DXVec3Cross( &Y , &Z , &X ) );
+
+	//  1行目の代入
+	pMtx->_11 = X.x;
+	pMtx->_12 = X.y;
+	pMtx->_13 = X.z;
+	pMtx->_14 = 0;
+
+	//  2行目の代入
+	pMtx->_21 = Y.x;
+	pMtx->_22 = Y.y;
+	pMtx->_23 = Y.z;
+	pMtx->_24 = 0;
+
+	//  3行目の代入
+	pMtx->_31 = Z.x;
+	pMtx->_32 = Z.y;
+	pMtx->_33 = Z.z;
+	pMtx->_34 = 0;
+
+	//  4行目の代入
+	pMtx->_41 = 0.0f;
+	pMtx->_42 = 0.0f;
+	pMtx->_43 = 0.0f;
+	pMtx->_44 = 1.0f;
+
+	return pMtx;
+}
+
+//--------------------------------------------------------------------------------------
+//  外積によって求められる垂直ベクトルから行列を作る関数
+//--------------------------------------------------------------------------------------
 D3DXMATRIX* Utility::GetFixedLookAtMatrix( D3DXMATRIX* pMtx , D3DXVECTOR3* pPos , D3DXVECTOR3* pPosAt , D3DXVECTOR3* pVecUp )
 {
 	//  ローカル変数の宣言

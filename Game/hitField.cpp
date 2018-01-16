@@ -130,12 +130,12 @@ HRESULT HitField::Init( void )
 
 	//  最大座標の設定
 	Game::SetFieldMax( max );
-
-#ifdef _DEBUG
-
-	MeshBoundingBox
-
-#endif
+//
+//#ifdef _DEBUG
+//
+//	MeshBoundingBox
+//
+//#endif
 
 	//////////////////////////////////////////////////////////
 	//  頂点インデックスの取得

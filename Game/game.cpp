@@ -31,6 +31,9 @@
 #include "block.h"
 #include "wall.h"
 #include "cascadeShadow.h"
+#include "playerWinks.h"
+#include "playerRauder.h"
+#include "enemyRauder.h"
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
@@ -87,9 +90,6 @@ void Game::Init( void )
 {
 	m_bClear = false;
 
-	//  FBXの生成
-	//UnityFBX::Create( D3DXVECTOR3( 0.0f , 0.0f , -200.0f ) , 0.1f );
-
 	//  ステージの生成
 	SetStage( );
 
@@ -135,7 +135,7 @@ void Game::Update( void )
 	}
 
 	//  カスケードシャドウの更新
-	CascadeShadow::Update( );
+	CascadeShadow::SetCascadeShadowInfo( m_fieldMin , m_fieldMax );
 
 	if( m_bClear )
 	{
@@ -255,12 +255,15 @@ void Game::SetStage( void )
 			}
 
 			//  プレイヤーの生成
-			Player::Create( D3DXVECTOR3( 0.0f , 0.0f , -STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
-							 D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED  , magic );
+			PlayerWinks::Create( D3DXVECTOR3( 0.0f , 0.0f , -STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+								 D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED  , PlayerWinks::MAGIC::FIRE );
+
+			//PlayerRauder::Create( D3DXVECTOR3( 0.0f , 0.0f , -STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+			//					  D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED  , PlayerRauder::MAGIC::FIRE );
 
 			//  敵の生成
-			Enemy::Create( D3DXVECTOR3( 0.0f , 0.0f , STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
-							D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED );
+			EnemyRauder::Create( D3DXVECTOR3( 0.0f , 0.0f , STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+								 D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED , EnemyRauder::MAGIC::FIRE );
 		}
 		//  プレイヤー対戦の場合
 		else if( m_modeVS == Game::MODE_VS_PLAYER )
@@ -412,12 +415,15 @@ void Game::SetStage( void )
 			}
 
 			//  プレイヤーの生成
-			Player::Create( D3DXVECTOR3( 0.0f , 0.0f , -STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
-							D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED  , magic );
+			PlayerWinks::Create( D3DXVECTOR3( 0.0f , 0.0f , -STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+								 D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED  , PlayerWinks::MAGIC::FIRE );
+
+			//PlayerRauder::Create( D3DXVECTOR3( 0.0f , 0.0f , -STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+			//					  D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED  , PlayerRauder::MAGIC::FIRE );
 
 			//  敵の生成
-			Enemy::Create( D3DXVECTOR3( 0.0f , 0.0f , STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
-						   D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED );
+			EnemyRauder::Create( D3DXVECTOR3( 0.0f , 0.0f , STAGE1_DISTACE ) , D3DXVECTOR3( 0.0f , 0.0f , 0.0f ) ,
+								 D3DXVECTOR3( THIEF_SIZE , THIEF_SIZE , THIEF_SIZE ) , PLAYER_SPEED , EnemyRauder::MAGIC::FIRE );
 		}
 		//  プレイヤー対戦の場合
 		else if( m_modeVS == Game::MODE_VS_PLAYER )

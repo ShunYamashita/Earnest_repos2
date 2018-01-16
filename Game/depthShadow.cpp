@@ -23,7 +23,7 @@
 LPDIRECT3DTEXTURE9	DepthShadow::m_depthShadowTexture = nullptr;			//  テクスチャ
 LPDIRECT3DSURFACE9	DepthShadow::m_depthShadowSurface = nullptr;			//  レンダーターゲット用サーフェイス
 LPDIRECT3DSURFACE9	DepthShadow::m_shadowMap = nullptr;						//  テクスチャ用の深度バッファー
-float				DepthShadow::m_bias = 0.000013f;
+float				DepthShadow::m_bias = 0.000003f;
 const UINT			DepthShadow::TEXTURE_WIDTH = 2048;						//  テクスチャの幅
 const UINT			DepthShadow::TEXTURE_HEIGHT = 2048;						//  テクスチャの高さ
 
@@ -48,7 +48,7 @@ DepthShadow::~DepthShadow( )
 //--------------------------------------------------------------------------------------
 HRESULT DepthShadow::Init( void )
 {
-	m_bias = 0.000012f;
+	m_bias = 0.000003f;
 
 	//  デバイス情報の取得
 	LPDIRECT3DDEVICE9 pDevice = SceneManager::GetRenderer( )->GetDevice( );

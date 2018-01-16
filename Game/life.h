@@ -44,6 +44,7 @@ public:
 									D3DXVECTOR3 size , 
 									D3DXVECTOR2 posUV ,
 									D3DXVECTOR2 divideUV ,
+									D3DXCOLOR color ,
 									int nBaseLife );
 
 	void					SetLife( int nLife );							//  体力の設定

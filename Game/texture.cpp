@@ -96,7 +96,7 @@ void Texture::SetTextureImage( const char *aFileName )
 				std::string message = aFileName;
 
 				//  エラーだった場合
-				MessageBox( NULL , message.c_str( ) , "エラーメッセージ" , MB_OK | MB_ICONWARNING );
+				//MessageBox( NULL , message.c_str( ) , "エラーメッセージ" , MB_OK | MB_ICONWARNING );
 			}
 
 			break;

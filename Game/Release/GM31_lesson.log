@@ -1,2 +1,9 @@
-﻿  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Game_BoneTexture\\GM31_lessonRelease.exe
-  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Game_BoneTexture\\GM31_lessonRelease.pdb (Full PDB)
+﻿  playerWinksLanding.cpp
+     ライブラリ C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonRelease.lib とオブジェクト C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonRelease.exp を作成中
+  コード生成しています。
+  1 of 7199 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  コード生成が終了しました。
+  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonRelease.exe
+  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonRelease.pdb (Full PDB)

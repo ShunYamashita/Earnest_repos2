@@ -1,2 +1,167 @@
-﻿  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Game_BoneTexture\\GM31_lessonDebug.exe
-  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Game_BoneTexture\\GM31_lessonDebug.pdb (Full PDB)
+﻿  texture.cpp
+  test.cpp
+c:\users\yamashita.shun\desktop\earnest_repos2\game\test.cpp(111): warning C4244: '引数': 'int' から 'FLOAT' への変換です。データが失われる可能性があります。
+  sceneModelAnim.cpp
+  playerWinksState.cpp
+  playerWinksMove.cpp
+  playerWinksLockonDash.cpp
+  playerWinksJump.cpp
+  playerWinksIdle.cpp
+  playerWinksFreeDash.cpp
+  playerWinksAttack.cpp
+  playerWinks.cpp
+  playerRauderState.cpp
+  playerRauderMove.cpp
+  playerRauderJump.cpp
+  playerRauderIdle.cpp
+  playerRauderAttack.cpp
+  playerRauder.cpp
+  objectFBX.cpp
+c:\users\yamashita.shun\desktop\earnest_repos2\game\objectfbx.cpp(635): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\yamashita.shun\desktop\earnest_repos2\game\objectfbx.cpp(763): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  light.cpp
+  layerAI.cpp
+  コードを生成中...
+c:\users\yamashita.shun\desktop\earnest_repos2\game\playerrauder.cpp(1279): warning C4715: 'PlayerRauder::GetMotionFinish': 値を返さないコントロール パスがあります。
+c:\users\yamashita.shun\desktop\earnest_repos2\game\playerwinks.cpp(1279): warning C4715: 'PlayerWinks::GetMotionFinish': 値を返さないコントロール パスがあります。
+c:\users\yamashita.shun\desktop\earnest_repos2\game\playerwinks.cpp(1322): warning C4715: 'PlayerWinks::GetMotionFrame': 値を返さないコントロール パスがあります。
+c:\users\yamashita.shun\desktop\earnest_repos2\game\playerwinks.cpp(1333): warning C4715: 'PlayerWinks::GetMotionFrameRate': 値を返さないコントロール パスがあります。
+  コンパイル中...
+  game.cpp
+  fbxLoader.cpp
+c:\users\yamashita.shun\desktop\earnest_repos2\game\fbxloader.cpp(451): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  enemyRauderState.cpp
+  enemyRauderMove.cpp
+  enemyRauderJump.cpp
+  enemyRauderIdle.cpp
+  enemyRauderAttack.cpp
+  enemyRauder.cpp
+  effekseerManager.cpp
+  depthShadow.cpp
+  actionNodeAI.cpp
+  コードを生成中...
+c:\users\yamashita.shun\desktop\earnest_repos2\game\enemyrauder.cpp(1091): warning C4715: 'EnemyRauder::GetMotionFinish': 値を返さないコントロール パスがあります。
+  コンパイル中...
+  title.cpp
+  shadow.cpp
+  playerState.cpp
+  playerRushAttack.cpp
+  playerResultWin.cpp
+  playerResultLose.cpp
+  playerPassive.cpp
+  playerNeutral.cpp
+  playerMove.cpp
+  playerMagicReady.cpp
+  playerMagicActive.cpp
+  playerLockonDash.cpp
+  playerLanding.cpp
+  playerJump.cpp
+  playerBraveAttack000Before.cpp
+  playerBraveAttack000After.cpp
+  playerGuard.cpp
+  playerEscape.cpp
+  playerHPAttack000.cpp
+  playerFreeDash.cpp
+  コードを生成中...
+  コンパイル中...
+  playerBlow.cpp
+  playerBend.cpp
+  player.cpp
+  particle.cpp
+  manager.cpp
+  magicTornade.cpp
+  magicLightning.cpp
+  magicFire.cpp
+  enemyState.cpp
+  enemyRushAttack.cpp
+  enemyResultWin.cpp
+  enemyResultLose.cpp
+  enemyPassive.cpp
+  enemyNeutral.cpp
+  enemyMove.cpp
+  enemyMagicReady.cpp
+  enemyMagicActive.cpp
+  enemyLockonDash.cpp
+  enemyLanding.cpp
+  enemyJump.cpp
+  コードを生成中...
+  コンパイル中...
+  enemyHPAttack000.cpp
+  enemyGuard.cpp
+  enemyFreeDash.cpp
+  enemyEscape.cpp
+  enemyBraveAttack000Before.cpp
+  enemyBraveAttack000After.cpp
+  enemyBlow.cpp
+  enemyBend.cpp
+  enemy.cpp
+  debugManager.cpp
+c:\users\yamashita.shun\desktop\earnest_repos2\game\debugmanager.cpp(139): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\users\yamashita.shun\desktop\earnest_repos2\game\debugmanager.cpp(141): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  bullet.cpp
+  コードを生成中...
+  スキップ中... (関連する変更は検出されませんでした)
+  tutorial.cpp
+  teamLogo.cpp
+  stageSelect.cpp
+  scene.cpp
+  result.cpp
+  renderer.cpp
+  playerSelect.cpp
+  playerResult.cpp
+     ライブラリ C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonDebug.lib とオブジェクト C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonDebug.exp を作成中
+Effekseer.lib(Effekseer.Color.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Color.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.CriticalSection.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.CriticalSection.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.DefaultEffectLoader.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.DefaultEffectLoader.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.DefaultFile.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.DefaultFile.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Effect.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Effect.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.EffectNode.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.EffectNode.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.EffectNodeModel.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.EffectNodeModel.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.EffectNodeRibbon.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.EffectNodeRibbon.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.EffectNodeRing.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.EffectNodeRing.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.EffectNodeSprite.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.EffectNodeSprite.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.EffectNodeTrack.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.EffectNodeTrack.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.FCurves.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.FCurves.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Instance.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Instance.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.InstanceContainer.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.InstanceContainer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.InstanceGlobal.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.InstanceGlobal.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.InstanceGroup.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.InstanceGroup.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Manager.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Manager.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Matrix43.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Matrix43.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Matrix44.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Matrix44.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.RectF.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.RectF.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Setting.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Setting.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Vector2D.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Vector2D.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Effekseer.Vector3D.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Effekseer.Vector3D.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.Grid.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.Grid.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.Layer.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.Layer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.Matrix44.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.Matrix44.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.ObjectInternal.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.ObjectInternal.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.ReferenceObject.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.ReferenceObject.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.Vector3DF.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.Vector3DF.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+Effekseer.lib(Culling3D.WorldInternal.obj) : warning LNK4099: PDB 'effekseer.pdb' が 'Effekseer.lib(Culling3D.WorldInternal.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.DeviceObject.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.DeviceObject.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.IndexBuffer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.IndexBuffer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.ModelLoader.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.ModelLoader.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.ModelRenderer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.ModelRenderer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.Renderer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.Renderer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.RenderState.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.RenderState.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.RibbonRenderer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.RibbonRenderer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.RingRenderer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.RingRenderer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.Shader.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.Shader.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.SpriteRenderer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.SpriteRenderer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.TextureLoader.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.TextureLoader.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.TrackRenderer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.TrackRenderer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRendererDX9.VertexBuffer.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRendererDX9.VertexBuffer.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.IndexBufferBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.IndexBufferBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.ModelRendererBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.ModelRendererBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.RenderStateBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.RenderStateBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.RibbonRendererBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.RibbonRendererBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.RingRendererBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.RingRendererBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.SpriteRendererBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.SpriteRendererBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.TrackRendererBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.TrackRendererBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.VertexBufferBase.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.VertexBufferBase.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.DXTK.DDSTextureLoader.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.DXTK.DDSTextureLoader.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+EffekseerRendererDX9.lib(EffekseerRenderer.PngTextureLoader.obj) : warning LNK4099: PDB 'effekseer_renderer_dx9.pdb' が 'EffekseerRendererDX9.lib(EffekseerRenderer.PngTextureLoader.obj)' で、または 'C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\effekseer_renderer_dx9.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
+  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonDebug.exe
+  GM31_lesson.vcxproj -> C:\Users\yamashita.shun\Desktop\Earnest_repos2\Game\\GM31_lessonDebug.pdb (Full PDB)

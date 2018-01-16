@@ -33,9 +33,10 @@ public:
 	~CascadeShadow( );																//  デストラクタ
 
 	static HRESULT				Init( void );										//  初期化
-	static void					Uninit( void );										//  終了
-	static void					Update( void );										//  更新
+	static void					Uninit( void );										//  終了		
 	static void					DrawClearBuffer( void );							//  バッファのクリア
+	static void					SetCascadeShadowInfo( const D3DXVECTOR3& min ,		//  カスケードシャドウ情報の設定
+													  const D3DXVECTOR3& max );				
 	static void					SetRendererTarget( int index );						//  レンダーターゲットの設定
 	static void					SetDepthSerface( void );							//  深度バッファの設定
 	static void					SetBias( float bias );								//  バイアス値の設定

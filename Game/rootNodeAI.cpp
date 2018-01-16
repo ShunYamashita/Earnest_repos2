@@ -9,19 +9,79 @@
 //--------------------------------------------------------------------------------------
 #include "rootNodeAI.h"
 #include "layerAI.h"
+#include "imgui_impl_dx9.h"
 
 //--------------------------------------------------------------------------------------
 //  マクロ定義
 //--------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------
-//  全てのノードの実行可能状態の判断
+//  解放処理
 //--------------------------------------------------------------------------------------
-void RootNodeAI::AllJudgeActive( void )
+void RootNodeAI::Release( void )
 {
-	//  子レイヤーが存在している場合
-	if( m_childLayerAI != nullptr )
+	NodeAI::Release( );
+}
+
+//--------------------------------------------------------------------------------------
+//  実行可能かの判断をする
+//--------------------------------------------------------------------------------------
+void RootNodeAI::JudgeActive( void )
+{
+	NodeAI::JudgeActive( );
+}
+
+//--------------------------------------------------------------------------------------
+//  実行処理
+//--------------------------------------------------------------------------------------
+void RootNodeAI::Run( void )
+{
+	if( m_childLayer != nullptr )
 	{
-		m_childLayerAI->AllJudgeActive( );
+		m_childLayer->Run( );
+	}
+}
+
+//--------------------------------------------------------------------------------------
+//  デバッグの描画
+//--------------------------------------------------------------------------------------
+void RootNodeAI::DrawDebug( void )
+{
+	std::string work = m_name + "Node";
+
+	if( ImGui::TreeNode( work.c_str( ) ) ) 
+	{
+		//  名前の取得
+		ImGui::InputText( "Name" , m_addLayerName , sizeof( m_addLayerName ) );
+
+		if( m_childLayer == nullptr )
+		{
+			//  Layerの追加
+			if( ImGui::Button( "AddLayer" ) ) 
+			{
+				std::string work = m_addLayerName;
+				AddChildLayer( CharacterAI::LAYER_TYPE::PRIORITY , work , m_characterAI , this );
+				strcpy( m_addLayerName , "" );
+			}
+		}
+
+		//  自身の削除
+		if( ImGui::Button( "Delete" ) ) 
+		{
+			Release( );
+
+			//  親レイヤーに削除を通知
+			if( m_parentLayer != nullptr )
+			{
+				m_parentLayer->DeleteChildNode( m_name );
+			}
+		}
+
+		if( m_childLayer != nullptr )
+		{
+			m_childLayer->DrawDebug( );
+		}
+
+		ImGui::TreePop( );
 	}
 }
