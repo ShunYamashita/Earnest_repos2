@@ -1,6 +1,17 @@
 Event	ID	Name			Wwise Object Path	Notes
 	1983284048	ak_test			\Default Work Unit\ak_test	
 
+State Group	ID	Name			Wwise Object Path	Notes
+	19971727	state_test			\Default Work Unit\state_test	
+
+State	ID	Name	State Group			Notes
+	748895195	None	state_test			
+	979470758	Yes	state_test			
+	1668749452	No	state_test			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	1002311357	No	state_test	\Actor-Mixer Hierarchy\Default Work Unit\title		
+
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	270140794	title	C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\.cache\Windows\SFX\title_F17FB28C.wem	270140794.wem	\Actor-Mixer Hierarchy\Default Work Unit\title	
+	270140794	title	C:\Users\nikumaro\Documents\Earnest_repos2\Game\data\wwiseProject\.cache\Windows\SFX\title_F17FB28C.wem	270140794.wem	\Actor-Mixer Hierarchy\Default Work Unit\title	
 

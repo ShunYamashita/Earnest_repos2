@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
 	<RootPaths>
-		<ProjectRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\nikumaro\Documents\Earnest_repos2\Game\data\wwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\nikumaro\Documents\Earnest_repos2\Game\data\wwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\nikumaro\Documents\Earnest_repos2\Game\data\wwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\yamashita.shun\Desktop\Game_BoneTexture\data\wwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\nikumaro\Documents\Earnest_repos2\Game\data\wwiseProject\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles>

@@ -26,6 +26,23 @@
 							<AudioFile>title.wav</AudioFile>
 						</AudioFileSource>
 					</ChildrenList>
+					<StateInfo>
+						<StateGroupList>
+							<StateGroupInfo>
+								<StateGroupRef Name="state_test" ID="{13B2DF18-011E-4381-AFA9-49988054BB34}"/>
+							</StateGroupInfo>
+						</StateGroupList>
+						<CustomStateList>
+							<CustomState>
+								<StateRef Name="No" ID="{BA9746A2-B464-41B1-9B8A-EA6A7BB1A7CD}"/>
+								<State Name="" ID="{B53B971E-CF2E-4344-B957-BD68322D9244}" ShortID="1002311357">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+								</State>
+							</CustomState>
+						</CustomStateList>
+					</StateInfo>
 					<ActiveSourceList>
 						<ActiveSource Name="title" ID="{EF671EBB-7A1F-4F08-8E0F-0D4A9834171B}" Platform="Linked"/>
 					</ActiveSourceList>
