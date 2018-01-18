@@ -16,6 +16,21 @@ namespace AK
         static const AkUniqueID AK_TEST = 1983284048U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace STATE_TEST
+        {
+            static const AkUniqueID GROUP = 19971727U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NO = 1668749452U;
+                static const AkUniqueID YES = 979470758U;
+            } // namespace STATE
+        } // namespace STATE_TEST
+
+    } // namespace STATES
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
